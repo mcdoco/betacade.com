@@ -352,6 +352,8 @@ section + section { border-top: 1px solid var(--line); }
 @media (max-width: 860px) { .facts { grid-template-columns: 1fr; } }
 .cta-row.center { justify-content: center; }
 .closing .wrap { text-align: center; display: grid; justify-items: center; gap: 20px; }
+.closing .quiet { color: var(--text2); text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 3px; }
+.closing .quiet:hover { color: var(--text); }
 .closing h2 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); font-weight: 700; }
 
 /* ── Pricing page: cheapest first, players then studios ── */
