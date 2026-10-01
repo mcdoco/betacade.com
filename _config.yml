@@ -1,0 +1,30 @@
+title: Betacade
+description: Playtest your web game. Deploy a build, share one link, and see who played, how far they got, what broke and what they told you.
+url: https://betacade.com
+lang: en
+author: McDoCo, LLC
+
+# jekyll-github-metadata (pulled in by the github-pages gem) resolves this from
+# the `origin` remote on GitHub's builders, but it can't see git from inside the
+# docker-compose container, and it only hard-fails when JEKYLL_ENV=production.
+# Stating it explicitly is what makes a local production build work.
+# TODO(matt): change if the GitHub repo ends up under a different owner/name.
+repository: mcdoco/betacade.com
+
+# The app's hosts. Every call to action on the site points at one of these.
+studio_url: https://api.betacade.com/studio
+llms_url: https://api.betacade.com/llms.txt
+play_url: https://play.betacade.com/
+api_url: https://api.betacade.com
+game_url: https://play.betacade.com/g/business
+
+# Files that must not be published.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - .gitignore
+  - .dockerignore
+  - Dockerfile
+  - docker-compose.yml

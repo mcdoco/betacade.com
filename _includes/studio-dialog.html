@@ -1,0 +1,65 @@
+<dialog id="studio" class="studio-dialog" aria-labelledby="studio-t">
+  <form id="studio-form" method="dialog" novalidate>
+    <h2 id="studio-t">Publish a game</h2>
+    <p class="muted">Studios are joining from a waitlist while we open up. Leave your email and we'll write when your spot is ready.</p>
+    <label for="studio-email">Email</label>
+    <input id="studio-email" name="email" type="email" autocomplete="email" maxlength="320" required />
+    <label for="studio-name">Your name or studio <span class="muted">(optional)</span></label>
+    <input id="studio-name" name="displayName" type="text" autocomplete="organization" maxlength="120" />
+    <p id="studio-msg" class="studio-msg" role="status"></p>
+    <div class="studio-actions">
+      <button type="button" class="btn ghost" value="cancel" id="studio-close">Close</button>
+      <button type="submit" class="btn" id="studio-send">Join the waitlist</button>
+    </div>
+    <p class="fine">We use your email only to let you in. See our <a href="/privacy.html">privacy policy</a>.</p>
+  </form>
+</dialog>
+<script>
+// The site's only script: the prompt's Copy button, and the studio form sent to the waitlist.
+// Without it, Copy stays hidden and the studio buttons are plain mailto links.
+(function () {
+  // The clipboard API exists only on secure pages; elsewhere (a local preview) select and copy.
+  function fallback(code) {
+    var r = document.createRange(), sel = window.getSelection();
+    r.selectNodeContents(code); sel.removeAllRanges(); sel.addRange(r);
+    var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+    sel.removeAllRanges();
+    return ok;
+  }
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    var code = b.parentNode.querySelector("code");
+    if (!code) return;
+    b.hidden = false;
+    function done(ok) { b.textContent = ok ? "Copied" : "Select and copy"; setTimeout(function () { b.textContent = "Copy"; }, 1600); }
+    b.addEventListener("click", function () {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code.textContent).then(function () { done(true); }, function () { done(fallback(code)); });
+      } else done(fallback(code));
+    });
+  });
+})();
+(function () {
+  var d = document.getElementById("studio"), f = document.getElementById("studio-form");
+  var msg = document.getElementById("studio-msg"), send = document.getElementById("studio-send");
+  if (!d || typeof d.showModal !== "function") return;
+  document.querySelectorAll("[data-studio]").forEach(function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); msg.textContent = ""; d.showModal(); });
+  });
+  document.getElementById("studio-close").addEventListener("click", function () { d.close(); });
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var email = f.email.value.trim(), name = f.displayName.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = "Enter your email address."; return; }
+    send.disabled = true; msg.textContent = "Sending…";
+    var body = { email: email };
+    if (name) body.displayName = name;
+    fetch("{{ site.api_url }}/v1/waitlist", {
+      method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body), credentials: "omit"
+    }).then(function (r) {
+      send.disabled = false;
+      if (r.status === 204) { f.reset(); msg.textContent = "You're on the list. We'll email you when your studio spot is ready."; return; }
+      msg.textContent = r.status === 429 ? "Too many tries. Try again in a few minutes." : "That didn't work. Check the address, or email hello@betacade.com.";
+    }).catch(function () { send.disabled = false; msg.textContent = "Couldn't reach us. Email hello@betacade.com instead."; });
+  });
+})();
+</script>

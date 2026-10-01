@@ -1,0 +1,254 @@
+---
+layout: default
+title: "Privacy Policy | Betacade"
+description: "What Betacade collects when you play or publish a game, why, who sees it, how long we keep it, and the controls and rights you have."
+---
+
+<!-- DRAFT — review by a lawyer before launch traffic. -->
+
+{%- comment -%}
+Notes for matt (not published):
+- The app versions this document in betacade's lib/legal.ts. Bump it to 2026-10-02
+  when this goes live so everyone accepts the new text (launch-friday.md step 7).
+- GPC: Section 9 promises that a browser sending Sec-GPC: 1 starts with sharing
+  Off. A grep of apps/ on 2026-09-30 found no Sec-GPC handling yet. TODO(matt):
+  build it (or take the sentence out) before launch traffic.
+- Mailboxes: privacy@betacade.com and hello@betacade.com must exist and reach
+  you (e.g. Cloudflare Email Routing). TODO(matt).
+{%- endcomment -%}
+
+<main class="legal">
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: October 2, 2026</p>
+
+  <p class="lead">Betacade hosts web games so the people making them can playtest them. This policy explains what we collect when you play a game or publish one, why, who sees it, how long we keep it, and what you can do about it. Betacade is operated by McDoCo, LLC.</p>
+
+  <div class="callout">
+    <p><strong>The short version.</strong> If you choose to help a game's developer, the play page sends them your progress (from the game's saved state), errors, play time and basic browser details, and on some builds a recording of the game's state so they can replay your session. If you choose not to, it sends nothing about your play. Developers see you only under an anonymous tester name and never see your email. You don't need an account to play. We do not sell your personal information or share it for advertising. You can delete your play data for any game whenever you like. This website sets no cookies and runs no analytics; its only script copies the agent prompt and opens the studio sign-up form and sends it. Questions: <a href="mailto:privacy@betacade.com">privacy@betacade.com</a>.</p>
+  </div>
+
+  <div class="toc">
+    <strong>Contents</strong>
+    <ol>
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#notice">Notice at collection</a></li>
+      <li><a href="#play">What the play page collects</a></li>
+      <li><a href="#accounts">Accounts and sign-in</a></li>
+      <li><a href="#studios-see">What studios see, and what they don't</a></li>
+      <li><a href="#studio-role">Studios and what their games save</a></li>
+      <li><a href="#use">How we use information</a></li>
+      <li><a href="#processors">Who processes it for us</a></li>
+      <li><a href="#controls">Your controls</a></li>
+      <li><a href="#sell">No selling, no sharing for advertising</a></li>
+      <li><a href="#retention">How long we keep information</a></li>
+      <li><a href="#ccpa">Your California privacy rights</a></li>
+      <li><a href="#website">This website</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </div>
+
+  <h2 id="who">1. Who we are</h2>
+  <p>Betacade is a playtest platform for web games, operated by McDoCo, LLC (&ldquo;McDoCo,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;). Studios publish builds of their games on Betacade; players play them at a play link. For California privacy law, McDoCo is the &ldquo;business&rdquo; responsible for the personal information described here. This policy is written for players and studios in the United States.</p>
+  <p>In this policy, a <strong>studio</strong> is whoever publishes a game on Betacade (a company, a team or one person), including any coding agent they use to do it. A <strong>player</strong> or <strong>tester</strong> is anyone who plays a game here.</p>
+
+  <h2 id="notice">2. Notice at collection</h2>
+  <p>This table is the summary. The sections after it give the detail. Before a game starts, its play page shows what will be sent to the developer if you choose to help, and links to this policy.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>What</th><th>When</th><th>Why</th><th>Who sees it</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Play data: sessions and play time, the game's saved state, errors and console lines, browser, screen size and device type, and replay recordings on builds that make them</td>
+          <td>Only while sharing is On</td>
+          <td>To show the game's studio how their game is played, and to keep and restore your saves</td>
+          <td>The game's studio, under your tester name; you, on Your data</td>
+        </tr>
+        <tr>
+          <td>Feedback and messages you write to a studio</td>
+          <td>When you send one, whether sharing is On or Off</td>
+          <td>To deliver it, and to let the studio reply</td>
+          <td>That studio, under your tester name</td>
+        </tr>
+        <tr>
+          <td>Email address</td>
+          <td>If you sign in</td>
+          <td>To sign you in with a code, keep your saves across devices, and tell you when a studio replies</td>
+          <td>Us only. Never shown to studios</td>
+        </tr>
+        <tr>
+          <td>IP address, browser user agent, request times</td>
+          <td>Whenever your browser loads a page or game file</td>
+          <td>To deliver pages and games, limit abuse, and keep the service secure</td>
+          <td>Us and our infrastructure providers</td>
+        </tr>
+        <tr>
+          <td>Studio account data: email, studio name, waitlist answers, games, builds and access tokens</td>
+          <td>When a studio signs in, joins the waitlist or publishes</td>
+          <td>To run the studio's account and host its games</td>
+          <td>Us; the studio name is shown to players</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>How long each is kept is in <a href="#retention">Section 11</a>. We do not sell any of it or share it for advertising (<a href="#sell">Section 10</a>).</p>
+
+  <h2 id="play">3. What the play page collects</h2>
+  <p>When you open a game, the play page asks whether you want to help the developer. That choice is the sharing switch: <strong>On</strong> or <strong>Off</strong>. You can change it later from the pause menu, and when signed in, from Your games.</p>
+
+  <h3>With sharing On</h3>
+  <ul>
+    <li><strong>Play sessions:</strong> when a session starts and ends, play time, which build you played, and whether you came back.</li>
+    <li><strong>The game's saved state:</strong> what the game writes to your browser's storage for that game (localStorage and IndexedDB), with the time of each change, synced as you play. This is how studios see your progress, and how your saves come back on another device. What a game stores there is up to its studio (see <a href="#studio-role">Section 6</a>).</li>
+    <li><strong>Errors and console lines:</strong> uncaught errors in the game, and the most recent lines the game wrote to the browser console before each error (up to 200, each shortened).</li>
+    <li><strong>Browser details:</strong> your browser, screen and window size, and the kind of device (for example phone or desktop).</li>
+    <li><strong>Replay recordings:</strong> on builds the studio has marked replayable, the game's own state, recorded as you play, so the studio can watch the session back. The play page says so before the game starts. It is the game's state, not a video of your screen, and not your camera or microphone.</li>
+    <li><strong>Events the game sends:</strong> a game can mark moments (&ldquo;level 3 reached&rdquo;) for its studio.</li>
+  </ul>
+
+  <h3>With sharing Off</h3>
+  <p>None of the play data above is sent. The game still loads from our servers, so they still see the request information below, and anything you choose to write to the studio is still sent (next).</p>
+
+  <h3>Feedback and messages</h3>
+  <p>When you send feedback or a message, we store it and pass it to the studio under your tester name. With sharing On, a note also carries the build and how far into the session you were. With sharing Off, it carries only the build. The note joins a thread between you and that studio so it can reply. Messages are not scanned or edited. If you type your own email or name into one, the studio will see it.</p>
+
+  <h3>Stored in your browser</h3>
+  <p>To recognize you when you come back, the play page keeps a random player key in your browser's storage, along with your sharing choice, the games you've played in that browser, which save you were on, and which replies you've read. The key is not your name or email. It is sent to us with your play data and notes so they are kept together. Signing out clears these from that browser.</p>
+
+  <h3>Request information</h3>
+  <p>Like any website, our servers and providers receive your IP address, browser user agent and request times whenever your browser loads a page, a game file or sends data. We use these to deliver the page and the game, to apply rate limits, and for security. We do not use your IP address to find your location or build a profile of you, and studios do not receive it.</p>
+
+  <h2 id="accounts">4. Accounts and sign-in</h2>
+  <p><strong>Players</strong> don't need an account. If you sign in, we ask only for your email address and send it a 6-digit code. Signing in links the games you've played in that browser to your account, keeps your saves across devices, collects your games on <a href="{{ site.play_url }}">Your games</a>, and lets us email you when a studio replies. A sign-in cookie keeps you signed in on that site. It is used for nothing else.</p>
+  <p><strong>Studios</strong> sign in with an email code too. New studios join a waitlist, and we may ask a few questions about the studio and the game (such as the studio's name, what it's making and a link). A studio's account holds its games, builds, settings and any access tokens it creates, including tokens an AI coding agent uses on its behalf. A studio name is shown to players on the play page (&ldquo;Space Frogs by Pond Studio&rdquo;).</p>
+
+  <h2 id="studios-see">5. What studios see, and what they don't</h2>
+  <p>A studio sees the play data and notes for its own games only, and sees each tester under an anonymous tester name (for example &ldquo;Amber Fox&rdquo;), one per game. A studio can give a tester a private name of its own choosing to tell testers apart; that name is the studio's note and isn't shown to you or anyone else.</p>
+  <ul>
+    <li><strong>Studios never see your email address</strong>, whether or not you've signed in, and no part of Betacade gives it to them.</li>
+    <li>Studios never see your IP address or your Betacade account.</li>
+    <li>When a studio replies to you, Betacade carries the message. If you've signed in, we email you that there is a reply; the studio does not learn the address it went to. You can turn those emails off, or block a studio's messages, for each game.</li>
+    <li>On a game's <strong>Your data</strong> tab, signed-in players can see what that studio sees: the sessions, saved state and errors your plays sent.</li>
+  </ul>
+  <p>A studio may export or copy what it sees, for example through the API. Once a studio has copied it, it is in the studio's hands as well as ours; your tester name, not your email, is what goes with it.</p>
+
+  <h2 id="studio-role">6. Studios and what their games save</h2>
+  <p>Each studio decides what its game records in its saves, writes to the console, and sends as events. Betacade syncs what the game writes; it does not decide what that is. A studio is responsible for what its game collects and for telling its own players about anything beyond this policy. Our <a href="/terms.html#studio-data">Terms of Service</a> require it.</p>
+  <p>If a game asks you for personal information inside the game, that is the studio asking, not Betacade. Think twice before typing anything into a game you wouldn't want its developer to see.</p>
+
+  <h2 id="use">7. How we use information</h2>
+  <ul>
+    <li>To host games and run the play page, the player pages and the studio pages.</li>
+    <li>To show studios how their games are played, as described in Section 5.</li>
+    <li>To keep, sync and restore your saves, and to let studios replay sessions and play from a save.</li>
+    <li>To sign you in, and to send the emails you'd expect: sign-in codes, reply notices, and notices about your account or these policies.</li>
+    <li>To deliver messages between players and studios.</li>
+    <li>To keep the service secure and working: rate limits, preventing abuse, investigating reports and fixing problems.</li>
+    <li>To comply with the law and enforce our <a href="/terms.html">Terms</a>.</li>
+  </ul>
+  <p>We do not use your information for advertising, we do not build profiles of you across games for anyone else, and we do not draw inferences about you.</p>
+
+  <h2 id="processors">8. Who processes it for us</h2>
+  <p>We use a small number of service providers to run Betacade. They process personal information on our behalf, under contract, and only to provide their service to us:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Provider</th><th>What for</th></tr></thead>
+      <tbody>
+        <tr><td>Google Cloud</td><td>Runs the Betacade API, the play page and the database, and stores secrets and backups</td></tr>
+        <tr><td>Cloudflare</td><td>DNS and network, delivers game files, and stores game builds and replay recordings</td></tr>
+        <tr><td>Resend</td><td>Sends our email: sign-in codes and reply notices</td></tr>
+        <tr><td>GitHub</td><td>Hosts this website (betacade.com), which collects nothing itself; see <a href="#website">Section 13</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Besides the studio whose game you play (Section 5) and these providers, we disclose personal information only if the law requires it, to protect the safety or rights of people or of Betacade, or as part of a merger, acquisition or sale of the business, in which case this policy would continue to apply to what was collected under it.</p>
+
+  <h2 id="controls">9. Your controls</h2>
+  <ul>
+    <li><strong>The sharing switch.</strong> Off sends no play data; On sends it under your tester name. Signed out, the choice is kept in that browser; signed in, it's your account's and every game follows it. Change it from the pause menu or from <a href="{{ site.play_url }}">Your games</a>.</li>
+    <li><strong>Global Privacy Control.</strong> If your browser sends a Global Privacy Control signal, the play page starts with sharing Off. It stays Off until you turn it On yourself.</li>
+    <li><strong>Delete my play data.</strong> On each game's Your data tab: every session, error, save and message you have for that game, deleted. It can't be undone.</li>
+    <li><strong>Messages.</strong> For each game, turn off reply emails, or block the studio's messages.</li>
+    <li><strong>Signing out.</strong> Signing out clears your player key and game list from that browser, so the next person to use it starts as a new tester and can't see your games. What you've already sent stays with your account until you delete it.</li>
+    <li><strong>Your browser's storage.</strong> Clearing site data for the play page has a similar effect in that browser, but it does not delete anything we already hold. Use Delete my play data for that, or ask us (Section 12).</li>
+  </ul>
+  <p>If you never signed in, your play data is tied to the random key in the browser you played on, not to your email. The way to delete it yourself is to sign in on that same browser, which links those games to your account, then use Delete my play data. The <a href="/data-request.html">Data requests</a> page explains the other routes.</p>
+
+  <h2 id="sell">10. No selling, no sharing for advertising</h2>
+  <p>We do not sell personal information, and we do not &ldquo;share&rdquo; it for cross-context behavioral advertising, as California law defines those terms. We have not done so in the past 12 months. There are no advertising or analytics trackers on the play page, the player pages, the studio pages or this website. Because we don't sell or share, there is no &ldquo;Do Not Sell or Share&rdquo; opt-out to offer; if that ever changes, we will update this policy first and offer the opt-out.</p>
+
+  <h2 id="retention">11. How long we keep information</h2>
+  <!-- TODO(matt): publish exact retention periods (play sessions, saves, replay recordings, errors, request logs, messages, waitlist entries, email delivery records, backups) once the retention sweeps exist; STATUS.md "Known gaps" says there are none yet. Replace the "we will publish" sentence below with them. -->
+  <ul>
+    <li><strong>Play data</strong> (sessions, saves, errors and replay recordings) is kept while the studio's game is on Betacade, so the studio can see it and your saves keep working. You can delete yours for any game at any time from Your data.</li>
+    <li><strong>Feedback and messages</strong> are kept with the thread they belong to, on the same terms.</li>
+    <li><strong>Accounts</strong> are kept until you ask us to close yours (see <a href="/data-request.html">Data requests</a>).</li>
+    <li><strong>Request information</strong> in server logs is kept only briefly, for running and securing the service.</li>
+    <li><strong>Backups</strong> are overwritten on a rolling schedule, so deleted data can take a short while to leave them.</li>
+  </ul>
+  <p>We will publish exact retention periods for each of these on this page.</p>
+
+  <h2 id="ccpa">12. Your California privacy rights</h2>
+  <p>If you live in California, the California Consumer Privacy Act, as amended by the CPRA, gives you the rights below. We extend them to everyone who uses Betacade, wherever they live.</p>
+
+  <h3>What we collect, by category</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Category</th><th>What it is here</th><th>Collected?</th></tr></thead>
+      <tbody>
+        <tr><td>Identifiers</td><td>Email address, for players and studios who sign in; IP address; the random player key; your anonymous tester name</td><td>Yes</td></tr>
+        <tr><td>Internet or other electronic network activity</td><td>Gameplay data: sessions, play time, saved state, errors and console lines, replay recordings, in-game events; device and browser details; feedback and messages</td><td>Yes</td></tr>
+        <tr><td>Professional or commercial information</td><td>A studio's name and its answers to the waitlist questions</td><td>Studios only</td></tr>
+        <tr><td>Inferences</td><td>&mdash;</td><td>No</td></tr>
+        <tr><td>Sensitive personal information</td><td>&mdash;</td><td>No</td></tr>
+        <tr><td>Precise geolocation, biometric, financial, health</td><td>&mdash;</td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Sources:</strong> you (what you type and choose), your browser and the game you're playing (the play page), and for studios, the studio itself and its tools. <strong>Purposes:</strong> those in <a href="#use">Section 7</a>. <strong>Disclosed to:</strong> the game's studio (play data and notes, under your tester name) and our service providers (<a href="#processors">Section 8</a>). <strong>Retention:</strong> <a href="#retention">Section 11</a>.</p>
+
+  <h3>Your rights</h3>
+  <ul>
+    <li><strong>Right to know and access:</strong> what personal information we hold about you, where it came from, why we use it, and who we disclose it to, and a copy of it.</li>
+    <li><strong>Right to delete</strong> personal information we collected from you.</li>
+    <li><strong>Right to correct</strong> personal information that is inaccurate.</li>
+    <li><strong>Right to limit</strong> the use of sensitive personal information. We don't collect any, so there is nothing to limit, but you may ask.</li>
+    <li><strong>Right to opt out of sale or sharing.</strong> We don't sell or share (Section 10).</li>
+    <li><strong>Non-discrimination.</strong> We won't treat you differently for using any of these rights. Every game plays the same with sharing Off or after you delete your data, apart from the features that need it, such as saves on other devices.</li>
+  </ul>
+
+  <h3>How to make a request</h3>
+  <ul>
+    <li><strong>Signed-in players:</strong> each game's <strong>Your data</strong> tab on <a href="{{ site.play_url }}">Your games</a> shows what the studio sees and has <strong>Delete my play data</strong>. That covers knowing and deleting your play data straight away.</li>
+    <li><strong>Everything else</strong>, including closing an account, a full copy, a correction, or play data from before you signed in: see <a href="/data-request.html">Data requests</a>, or email <a href="mailto:privacy@betacade.com">privacy@betacade.com</a>.</li>
+  </ul>
+  <p>We verify a request by sending a code to the email address in question. We won't ask for ID. You can have an authorized agent make a request for you; we'll still confirm it with you. We answer within 45 days, as the law requires, and aim to be much faster.</p>
+
+  <h3>Global Privacy Control</h3>
+  <p>We treat a Global Privacy Control signal as a choice to send no play data: a browser sending it starts with sharing Off (<a href="#controls">Section 9</a>). Since we don't sell or share personal information, there is no sale or sharing for it to stop.</p>
+
+  <h2 id="website">13. This website</h2>
+  <p>This website, betacade.com, sets no cookies and has no analytics or trackers. Its only script copies the agent prompt when you ask, and opens the studio sign-up form and sends what you type there (your email, and a name if you give one) to the waitlist. It is a set of static pages hosted on GitHub Pages; GitHub receives your IP address when your browser fetches a page, as any web host does, and handles it under its own privacy statement. The play page, the player pages and the studio are separate sites (play.betacade.com and api.betacade.com), described in the sections above.</p>
+
+  <h2 id="security">14. Security</h2>
+  <p>Every connection is encrypted with HTTPS. Each game runs on its own web origin, inside a sandboxed frame, so a game can't read the play page, your sign-in, or another game's data. Sign-in uses one-time email codes, so there is no password for us to store or for you to reuse. No system is perfectly secure; if we learn of a breach that affects you, we will tell you as the law requires.</p>
+
+  <h2 id="children">15. Children</h2>
+  <p>Betacade is not directed to children under 13, and we do not knowingly collect personal information from them. If you believe a child under 13 has given us personal information, email <a href="mailto:privacy@betacade.com">privacy@betacade.com</a> and we will delete it.</p>
+
+  <h2 id="changes">16. Changes to this policy</h2>
+  <p>We will post any change here and update the date at the top. For a material change, signed-in players and studios will be asked to accept the new version the next time they sign in.</p>
+
+  <h2 id="contact">17. Contact us</h2>
+  <p>
+    McDoCo, LLC<br />
+    Privacy: <a href="mailto:privacy@betacade.com">privacy@betacade.com</a><br />
+    Everything else: <a href="mailto:hello@betacade.com">hello@betacade.com</a><br />
+    <a href="https://mcdoco.com">mcdoco.com</a>
+  </p>
+</main>

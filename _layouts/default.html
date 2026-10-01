@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f7f7f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)" />
+  <!-- Placeholder icon drawn inline (the app's play mark); swap for real files later, see README. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111113'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%23ffffff'/%3E%3C/svg%3E" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <meta property="og:title" content="{{ page.title | default: site.title }}" />
+  <meta property="og:description" content="{{ page.description | default: site.description }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  {%- comment -%}
+  No scripts, analytics, trackers or cookies on this site. The privacy policy
+  says so (privacy.html, "This website"); keep it true.
+  {%- endcomment -%}
+
+  {% include nav.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+  {% include studio-dialog.html %}
+
+</body>
+</html>

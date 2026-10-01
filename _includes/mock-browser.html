@@ -1,0 +1,5 @@
+{%- comment -%} A browser window around a mock: include.url in the address bar, include.inner inside. {%- endcomment -%}
+<figure class="mock m-browser" role="img" aria-label="{{ include.label }}">
+  <div class="bw-bar" aria-hidden="true"><span class="bw-dots"><i></i><i></i><i></i></span><span class="bw-url">{{ include.url }}</span></div>
+  <div class="bw-body">{% include {{ include.inner }} %}</div>
+</figure>

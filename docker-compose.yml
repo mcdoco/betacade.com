@@ -1,0 +1,50 @@
+# Local preview only. GitHub Pages builds and hosts the real site; this just
+# lets you see changes locally with no Ruby installed on your machine.
+#
+#   docker compose watch   → builds, serves, and syncs your edits live
+#   Ctrl-C, then `docker compose down` to stop.
+#
+# NOTE: this is `watch`, not `up`. The Docker daemon is remote (an SSH
+# context), so it cannot see this machine's filesystem and a bind mount of the
+# working tree would resolve to an empty path on the remote host. Instead the
+# source is baked into the image (see Dockerfile) and `watch` streams later
+# edits into the running container over the Docker API. Needs Compose ≥ 2.22
+# (`sync+restart` below needs ≥ 2.32); check with `docker compose version`.
+#
+# The ports below publish on the REMOTE host, so browse the Docker host
+# directly (http://archmatt.local:4000), not localhost. Livereload follows on
+# its own: Jekyll's injected snippet takes the hostname from the page URL, so
+# it connects to archmatt.local:35729, which is published too.
+#
+# If tend2thrive.com's preview is running at the same time, stop it first:
+# both publish 4000 and 35729.
+
+services:
+  site:
+    build: .
+    ports:
+      - "4000:4000"    # the site
+      - "35729:35729"  # livereload websocket
+    develop:
+      watch:
+        # Content and templates: copy straight into the running container.
+        # Jekyll's own watcher picks them up and regenerates.
+        - action: sync
+          path: .
+          target: /site
+          ignore:
+            - .git/
+            - _site/
+            - .jekyll-cache/
+            - vendor/
+
+        # Jekyll reads _config.yml once at boot and never re-reads it.
+        - action: sync+restart
+          path: ./_config.yml
+          target: /site/_config.yml
+
+        # Changing the gems means reinstalling them: that's an image rebuild.
+        - action: rebuild
+          path: ./Gemfile
+        - action: rebuild
+          path: ./Gemfile.lock

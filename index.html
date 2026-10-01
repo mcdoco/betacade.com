@@ -1,0 +1,104 @@
+---
+layout: default
+title: "Betacade: playtest your web game"
+description: "Put a web game build up, send players one link, and watch how they actually played it: who's playing, how far they got, what broke, and a replay of each session."
+---
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Find the fun</h1>
+        <p class="sub">Put your web game in front of players with one link, then watch where they light up, where they get stuck, and where they quit.</p>
+        <div class="cta-row">
+          <a class="btn lg" href="mailto:hello@betacade.com?subject=Studio%20access" data-studio>Publish a game</a>
+          <a class="btn lg ghost" href="{{ site.game_url }}">Play a game</a>
+        </div>
+        <p class="aside">Agents: start at <a href="{{ site.llms_url }}">llms.txt</a>.</p>
+      </div>
+      {% include mock-dashboard.html %}
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="wrap">
+      <h2 class="how">How it works</h2>
+
+      <div class="step">
+        <div class="step-text">
+          <h3><span class="num">1</span>Set up your game page</h3>
+          <p>A title, a description, a cover image and a web build, with a Play now button and a history of every update. Do it yourself in the studio, or have your agent do it: it goes from sign-up to a playable, branded page in under a minute.</p>
+          <div class="prompt"><code>Put this game on Betacade.
+Start at https://api.betacade.com/llms.txt
+MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy hidden>Copy</button></div>
+        </div>
+        {% include mock-browser.html url="play.betacade.com/games/moon-toads" inner="mock-gamepage-body.html" label="An example game page in a browser: a cover image, the title and studio, a description, a Play now button, and a history of updates" %}
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <h3><span class="num">2</span>Share one link</h3>
+          <p>Players open it in the browser, on a phone or a laptop. No install, no account.</p>
+        </div>
+        {% include mock-devices.html %}
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <h3><span class="num">3</span>See what your players did</h3>
+          <p>Live players, progress from their saves, errors with what led up to them, their notes, and a replay of each session you can scrub through.</p>
+        </div>
+        {% include mock-replay.html %}
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <h3><span class="num">4</span>Quash bugs</h3>
+          <p>Feedback, errors and bugs land on one board, each with the moment it happened. Turn a note into a bug and move it along as you fix it.</p>
+        </div>
+        {% include mock-board.html %}
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <h3><span class="num">5</span>Find the fun</h3>
+          <p>Reply to players by their nickname, tell them when it's fixed, and hear what they make of the new build. You never see their email; they never see yours.</p>
+        </div>
+        {% include mock-inbox.html %}
+      </div>
+
+    </div>
+  </section>
+
+  <section class="players">
+    <div class="wrap">
+      <h2>For players</h2>
+      <p class="lede">Playing is free, in the browser, with no account.</p>
+      <div class="facts">
+        <div>
+          <h3>Your saves follow you.</h3>
+          <p>Sign in with your email and your saves come with you to any device. Pick up where you left off, switch between saves, or go back to an earlier one.</p>
+        </div>
+        <div>
+          <h3>Anonymous to studios.</h3>
+          <p>Studios see your progress under a made-up name, like Amber Fox, never your name or email. You choose whether a game sends anything at all, and you can turn it off any time.</p>
+        </div>
+        <div>
+          <h3>Your data, your call.</h3>
+          <p>See what a studio sees about you, and delete your play data for any game whenever you like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <div class="cta-row center">
+        <a class="btn lg" href="mailto:hello@betacade.com?subject=Studio%20access" data-studio>Publish a game</a>
+        <a class="btn lg ghost" href="{{ site.game_url }}">Play a game</a>
+      </div>
+    </div>
+  </section>
+
+</main>

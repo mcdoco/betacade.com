@@ -1,0 +1,105 @@
+---
+layout: default
+title: "Data requests | Betacade"
+description: "How to see, delete or correct what Betacade holds about you, as a player or a studio, with or without an account."
+---
+
+{%- comment -%}
+Handling a request that lands in privacy@betacade.com (the same scheme as
+tend2thrive.com's data-request page, which explains each rule in more detail):
+
+1. DO NOT HIT REPLY. Compose a NEW message to the address the requester asked us
+   to search, typed out from the body. Replying honors a Reply-To the sender
+   controls; addressing the mailbox ourselves is what makes this spoof-proof.
+2. Send a one-time code to that address and wait for it back. Disclose nothing
+   before it returns, not even whether we hold anything, or the page becomes a
+   way to test whether someone uses Betacade. Send the answer to that address.
+3. Exceptions: "stop emailing me" is acted on at once, no code (CAN-SPAM and the
+   CCPA regs). A signed-in player asking about play data: point them at Your data.
+4. Signed-out play data is keyed by a random player key in a browser, not an
+   email. We can't match it from an email; the route is signing in on that
+   browser (which links those games) and then Delete my play data. Don't go
+   hunting for other ways to identify them.
+5. When a request can't be verified or matched, answer anyway and say so.
+6. Afterwards keep only when, what was asked and what was done.
+
+Section 5 promises 30 days, shorter than the 45 CCPA allows.
+{%- endcomment -%}
+
+<main class="legal">
+  <div class="eyebrow">Legal</div>
+  <h1>Data requests</h1>
+  <p class="updated">Last updated: October 2, 2026</p>
+
+  <p class="lead">You can ask us what Betacade holds about you, have it deleted or corrected, or tell us to stop emailing you. For most players, the quickest way is to do it yourself. This page explains how, and how to ask us for the rest.</p>
+
+  <div class="callout">
+    <p><strong>The short version.</strong> Signed-in players can see and delete their play data for each game themselves, on that game's <strong>Your data</strong> tab in <a href="{{ site.play_url }}">Your games</a>. For anything else, email <a href="mailto:privacy@betacade.com">privacy@betacade.com</a> and tell us the address to look up and what you want. We confirm you control that address before we tell you anything. We won't ask for ID.</p>
+  </div>
+
+  <div class="toc">
+    <strong>Contents</strong>
+    <ol>
+      <li><a href="#yourself">Doing it yourself</a></li>
+      <li><a href="#signed-out">If you played without signing in</a></li>
+      <li><a href="#ask">Asking us</a></li>
+      <li><a href="#verify">How we check it's you</a></li>
+      <li><a href="#timing">How long it takes</a></li>
+      <li><a href="#studios">What a studio has copied</a></li>
+      <li><a href="#agents">Someone asking on your behalf</a></li>
+      <li><a href="#request-data">What we keep about the request</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </div>
+
+  <h2 id="yourself">1. Doing it yourself</h2>
+  <p>Sign in at <a href="{{ site.play_url }}">Your games</a> and open a game. Its <strong>Your data</strong> tab has:</p>
+  <ul>
+    <li><strong>What the studio sees:</strong> the sessions, saved state and errors your plays sent to that studio.</li>
+    <li><strong>Delete my play data:</strong> every session, error, save and message you have for that game, deleted. It can't be undone.</li>
+    <li>Switches for reply emails and for blocking that studio's messages.</li>
+  </ul>
+  <p>To stop sending play data at all, turn sharing Off from the pause menu or from Your games.</p>
+
+  <h2 id="signed-out">2. If you played without signing in</h2>
+  <p>Without an account, your play data is tied to a random key kept in the browser you played on, not to your email. That means we can't find it from your email address, and the browser holding the key is the proof that it's yours.</p>
+  <p>To delete it: on that same browser, open <a href="{{ site.play_url }}">Your games</a> and sign in with an email code. Signing in links the games you've played in that browser to your account. Then use Delete my play data for each one. If you'd rather not sign in, or no longer have that browser, write to us (Section 3) and we'll tell you honestly what we can and can't match.</p>
+  <p>Clearing your browser's data for the play page disconnects that browser from what it sent, but doesn't delete anything we hold.</p>
+
+  <h2 id="ask">3. Asking us</h2>
+  <p>Email us for anything the controls above don't cover: a full copy of what we hold, closing your player or studio account, a correction, waitlist answers, or being left alone. The button opens a message with a short template; you can also just write it yourself.</p>
+  <p><a class="btn" href="mailto:privacy@betacade.com?subject=Data%20request&amp;body=What%20I%20want%20%28delete%20the%20ones%20that%20do%20not%20apply%29%3A%0A-%20Tell%20me%20what%20you%20hold%20about%20me%0A-%20Delete%20it%20%2F%20close%20my%20account%0A-%20Correct%20it%0A-%20Stop%20emailing%20me%0A%0AThe%20email%20address%20to%20search%3A%0A%0AAre%20you%20a%20player%2C%20a%20studio%2C%20or%20both%3F%0A%0AAnything%20else%20we%20should%20know%3A%0A">Start a data request</a></p>
+  <p>Include:</p>
+  <ul>
+    <li><strong>The email address you want us to look up.</strong> Write it out in the message, even if you're sending from it. We work from what you typed, not from where the mail came from (Section 4 explains why).</li>
+    <li><strong>What you want:</strong> to know what we hold, to delete it, to correct it, or to stop getting email. More than one is fine.</li>
+    <li><strong>Whether you're a player, a studio or both</strong>, if you know. It helps us look in the right places.</li>
+  </ul>
+  <p>You don't need to give a reason or quote a law. A sentence is enough. If you're in California, this is also how you use the rights in <a href="/privacy.html#ccpa">Section 12 of the Privacy Policy</a>.</p>
+
+  <h2 id="verify">4. How we check it's you</h2>
+  <p>We send a one-time code <em>to</em> the address in question and wait for you to send it back. That's the whole check.</p>
+  <p>The &ldquo;from&rdquo; line of an email is easy to forge, so we don't treat it as proof. We write to the address you asked about, whatever address your message came from, so only someone who can read that mailbox can finish. If someone pretends to be you, our code goes to your inbox, not theirs.</p>
+  <p>Until the code comes back, we won't say whether we hold anything at all. Otherwise anyone could use this page to find out whether a particular person uses Betacade.</p>
+  <p>We won't ask for a government ID, a selfie or your date of birth. We'd rather hold less about you, not more. If an email round trip can't match a request, we'll tell you so rather than asking for documents.</p>
+  <p><strong>One request we don't verify:</strong> if all you want is for us to stop emailing you, we just do it. Worst case, someone stops getting mail they didn't ask for. If that was a mistake, tell us and we'll undo it.</p>
+
+  <h2 id="timing">5. How long it takes</h2>
+  <p>We aim to answer within a few days and will not take longer than 30. &ldquo;Stop emailing me&rdquo; is done straight away.</p>
+
+  <h2 id="studios">6. What a studio has copied</h2>
+  <p>Deleting your play data removes it from Betacade, including from the studio's view of its game. If a studio has already copied play data out of Betacade, for example through the API, that copy is the studio's. It's under your tester name, not your email, so we can't put you in touch with it directly, but tell us which game and we'll pass your request to the studio without giving them your address.</p>
+
+  <h2 id="agents">7. Someone asking on your behalf</h2>
+  <p>Someone else can make a request for you, such as a lawyer, a family member or a service you use. Send us something showing you authorized them, and we'll still confirm it with you at the address in question before acting.</p>
+
+  <h2 id="request-data">8. What we keep about the request</h2>
+  <p>We keep what you send only as long as it takes to deal with it. After that we keep a short record of when you asked, what you asked for and what we did, so we can show we honored it. We don't add you to any list or use the request to contact you about anything else. If you ask us never to email you again, we have to remember the address so we know to skip it.</p>
+
+  <h2 id="contact">9. Contact</h2>
+  <p>
+    McDoCo, LLC<br />
+    <a href="mailto:privacy@betacade.com">privacy@betacade.com</a><br />
+    <a href="https://mcdoco.com">mcdoco.com</a>
+  </p>
+</main>
