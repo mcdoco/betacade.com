@@ -17,6 +17,9 @@ llms_url: https://api.betacade.com/llms.txt
 play_url: https://play.betacade.com/
 api_url: https://api.betacade.com
 game_url: https://play.betacade.com/g/business
+# PostHog for betacade.com only (see _includes/analytics.html). Empty: no analytics at all.
+posthog_key: "phc_Cwhnm84Y3UAYC6VeZAc4v7G6P2ubEDQVEwKueUYdvzrR"
+posthog_host: https://us.i.posthog.com
 
 # Files that must not be published.
 exclude:

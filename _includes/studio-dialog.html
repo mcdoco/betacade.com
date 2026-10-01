@@ -57,7 +57,11 @@
       method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body), credentials: "omit"
     }).then(function (r) {
       send.disabled = false;
-      if (r.status === 204) { f.reset(); msg.textContent = "You're on the list. We'll email you when your studio spot is ready."; return; }
+      if (r.status === 204) {
+        f.reset(); msg.textContent = "You're on the list. We'll email you when your studio spot is ready.";
+        if (window.betacadeTrack) window.betacadeTrack("waitlist_joined");
+        return;
+      }
       msg.textContent = r.status === 429 ? "Too many tries. Try again in a few minutes." : "That didn't work. Check the address, or email hello@betacade.com.";
     }).catch(function () { send.disabled = false; msg.textContent = "Couldn't reach us. Email hello@betacade.com instead."; });
   });
