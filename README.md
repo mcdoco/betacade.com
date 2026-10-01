@@ -78,13 +78,10 @@ bump its version in the app's `lib/legal.ts` so everyone accepts the new text.
 
 ## Icons
 
-There are no icon files yet. `_layouts/default.html` draws a placeholder
-favicon inline (an SVG data URI of the app's play mark), and
-`site.webmanifest` lists no icons. When there's a real logo, add
-`favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png` and
-`android-chrome-192x192.png` / `-512x512.png` at the root, link them in the
-layout's `<head>` (tend2thrive.com's layout shows the set), and list the
-android ones in the manifest.
+`favicon.ico` (16, 32, 48), `favicon.svg` (follows light and dark: a light square in dark mode), `apple-touch-icon.png` (180, full bleed: iOS rounds
+it) and `icon-192.png` / `icon-512.png` (in `site.webmanifest`) are the play mark: an ink rounded
+square with a white triangle. They were drawn by a small standard-library Python script; when
+there's a real logo, replace these files and keep the names.
 
 ## Deployment
 
