@@ -302,12 +302,9 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .d-island { position: absolute; top: 3.2%; left: 50%; transform: translateX(-50%); width: 24%; height: 2.4%; border-radius: 999px; background: #000; z-index: 1; }
 .d-home { position: absolute; bottom: 2%; left: 50%; transform: translateX(-50%); width: 32%; height: 1%; border-radius: 999px; background: #8a8a94; }
 
-/* A smart fridge, side by side: a narrower freezer left, the fridge right with a screen, dark and on little feet. */
+/* A smart fridge, side by side: a narrower freezer left, the fridge right with a screen, dark. */
 .d-fridge { position: absolute; right: 0; bottom: 0; width: 31%; aspect-ratio: 10 / 16; display: grid; grid-template-columns: 2fr 3fr;
-            gap: 1.5%; padding-bottom: 4%; filter: drop-shadow(0 14px 24px rgba(0, 0, 0, .3)); }
-.d-fridge::before, .d-fridge::after { content: ""; position: absolute; bottom: 0; width: 10%; height: 4%; border-radius: 0 0 3px 3px; background: #0d0e11; }
-.d-fridge::before { left: 8%; }
-.d-fridge::after { right: 8%; }
+            gap: 1.5%; filter: drop-shadow(0 14px 24px rgba(0, 0, 0, .3)); }
 .d-fridge-door { position: relative; border: 1px solid #3a3d44; background: linear-gradient(100deg, #24262b 0%, #33363d 48%, #1f2125 100%); }
 .d-fridge-door.left { border-radius: 8px 2px 2px 8px; }
 .d-fridge-door.right { border-radius: 2px 8px 8px 2px; }
