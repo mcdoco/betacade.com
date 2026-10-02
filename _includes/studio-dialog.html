@@ -1,11 +1,15 @@
 <dialog id="studio" class="studio-dialog" aria-labelledby="studio-t">
   <form id="studio-form" method="dialog" novalidate>
     <h2 id="studio-t">Publish a game</h2>
-    <p class="muted">Studios are joining from a waitlist while we open up. Leave your email and we'll write when your spot is ready.</p>
+    <p class="muted">Studios are joining from a waitlist while we open up. Tell us what you're making and we'll email you when you can publish.</p>
     <label for="studio-email">Email</label>
     <input id="studio-email" name="email" type="email" autocomplete="email" maxlength="320" required />
     <label for="studio-name">Your name or studio <span class="muted">(optional)</span></label>
     <input id="studio-name" name="displayName" type="text" autocomplete="organization" maxlength="120" />
+    <label for="studio-making">What are you making? <span class="muted">(optional)</span></label>
+    <input id="studio-making" name="making" type="text" maxlength="500" />
+    <label for="studio-link">A link to it <span class="muted">(optional: a store page, repo or video)</span></label>
+    <input id="studio-link" name="link" type="url" inputmode="url" placeholder="https://" maxlength="500" />
     <p id="studio-msg" class="studio-msg" role="status"></p>
     <div class="studio-actions">
       <button type="button" class="btn ghost" value="cancel" id="studio-close">Close</button>
@@ -49,16 +53,20 @@
   f.addEventListener("submit", function (e) {
     e.preventDefault();
     var email = f.email.value.trim(), name = f.displayName.value.trim();
+    var making = f.making.value.trim(), link = f.link.value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = "Enter your email address."; return; }
+    if (link && !/^https?:\/\/\S+$/i.test(link)) { msg.textContent = "Start the link with https://"; return; }
     send.disabled = true; msg.textContent = "Sending…";
     var body = { email: email };
     if (name) body.displayName = name;
+    if (making) body.making = making;
+    if (link) body.link = link;
     fetch("{{ site.api_url }}/v1/waitlist", {
       method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body), credentials: "omit"
     }).then(function (r) {
       send.disabled = false;
       if (r.status === 204) {
-        f.reset(); msg.textContent = "You're on the list. We'll email you when your studio spot is ready.";
+        f.reset(); msg.textContent = "You're on the list. We'll email you when you can publish.";
         if (window.betacadeTrack) window.betacadeTrack("waitlist_joined");
         return;
       }

@@ -12,7 +12,7 @@ author: McDoCo, LLC
 repository: mcdoco/betacade.com
 
 # The app's hosts. Every call to action on the site points at one of these.
-studio_url: https://api.betacade.com/studio
+studio_url: https://studio.betacade.com
 llms_url: https://api.betacade.com/llms.txt
 play_url: https://play.betacade.com/
 api_url: https://api.betacade.com
