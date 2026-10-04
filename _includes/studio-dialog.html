@@ -50,6 +50,8 @@
     a.addEventListener("click", function (e) { e.preventDefault(); msg.textContent = ""; d.showModal(); });
   });
   document.getElementById("studio-close").addEventListener("click", function () { d.close(); });
+  // betacade.com/#publish (the waitlist QR code) opens the form straight away.
+  if (location.hash === "#publish") { msg.textContent = ""; d.showModal(); }
   f.addEventListener("submit", function (e) {
     e.preventDefault();
     var email = f.email.value.trim(), name = f.displayName.value.trim();
