@@ -4,6 +4,10 @@ url: https://betacade.com
 lang: en
 author: McDoCo, LLC
 
+# /sitemap.xml for Search Console (bundled with the github-pages gem; GitHub Pages allows it).
+plugins:
+  - jekyll-sitemap
+
 # jekyll-github-metadata (pulled in by the github-pages gem) resolves this from
 # the `origin` remote on GitHub's builders, but it can't see git from inside the
 # docker-compose container, and it only hard-fails when JEKYLL_ENV=production.
