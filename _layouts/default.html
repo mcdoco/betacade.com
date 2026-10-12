@@ -26,6 +26,15 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="{{ '/og-image.png' | absolute_url }}" />
   <link rel="stylesheet" href="/assets/css/site.css" />
+  {%- if page.url == "/" %}
+  {%- comment -%} Data, not a script: how Google learns the site's name (a brand search for "betacade"). {%- endcomment %}
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [
+    {"@type": "WebSite", "name": "{{ site.title }}", "alternateName": "betacade.com", "url": "{{ '/' | absolute_url }}"},
+    {"@type": "Organization", "name": "{{ site.title }}", "url": "{{ '/' | absolute_url }}", "logo": "{{ '/icon-512.png' | absolute_url }}"}
+  ]}
+  </script>
+  {%- endif %}
 </head>
 <body>
   {%- comment -%}
