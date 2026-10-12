@@ -20,12 +20,13 @@ Notes for matt (not published):
 <main class="legal">
   <div class="eyebrow">Legal</div>
   <h1>Privacy Policy</h1>
+  {% comment %} TODO(matt): the publish date, with terms.html's. {% endcomment %}
   <p class="updated">Last updated: October 2, 2026</p>
 
   <p class="lead">Betacade hosts web games so the people making them can playtest them. This policy explains what we collect when you play a game or publish one, why, who sees it, how long we keep it, and what you can do about it. Betacade is operated by McDoCo, LLC.</p>
 
   <div class="callout">
-    <p><strong>The short version.</strong> If you choose to help a game's developer, the play page sends them your progress (from the game's saved state), errors, play time and basic browser details, and on some builds a recording of the game's state so they can replay your session. If you choose not to, it sends nothing about your play. Developers see you only under an anonymous tester name and never see your email. You don't need an account to play. We do not sell your personal information or share it for advertising. You can delete your play data for any game whenever you like. This website sets no cookies; it counts page views and button clicks with PostHog, storing nothing in your browser, and not at all if your browser sends Global Privacy Control or Do Not Track. Questions: <a href="mailto:privacy@betacade.com">privacy@betacade.com</a>.</p>
+    <p><strong>The short version.</strong> If you choose to help a game's developer, the play page sends them your progress (from the game's saved state), errors, play time and basic browser details, and on some builds a recording of the game's state so they can replay your session. If you choose not to, it sends nothing about your play. Developers see you only under an anonymous tester name, unless you choose to show them your name, and never see your email. You don't need an account to play. We do not sell your personal information or share it for advertising. You can delete your play data for any game whenever you like. This website sets no cookies; it counts page views and button clicks with PostHog, storing nothing in your browser, and not at all if your browser sends Global Privacy Control or Do Not Track. Questions: <a href="mailto:privacy@betacade.com">privacy@betacade.com</a>.</p>
   </div>
 
   <div class="toc">
@@ -88,8 +89,26 @@ Notes for matt (not published):
           <td>Us and our infrastructure providers</td>
         </tr>
         <tr>
-          <td>Studio account data: email, studio name, waitlist answers, games, builds and access tokens</td>
-          <td>When a studio signs in, joins the waitlist or publishes</td>
+          <td>Your name and picture (optional)</td>
+          <td>If you set them on your account</td>
+          <td>To show them where you choose: to a game's studio, or on a game's leaderboard</td>
+          <td>You; a studio only if you show it to them; everyone, on a leaderboard where you show your name</td>
+        </tr>
+        <tr>
+          <td>Scores you set in a game</td>
+          <td>When the game sends one, with sharing On</td>
+          <td>To keep the game's leaderboard</td>
+          <td>Everyone, under your tester name (or your name, if you choose); the studio</td>
+        </tr>
+        <tr>
+          <td>Subscription: your plan, its status and Stripe's customer reference</td>
+          <td>If you subscribe to a paid plan</td>
+          <td>To give you the plan you paid for</td>
+          <td>Us. Stripe, the seller, handles the payment itself (Section 8)</td>
+        </tr>
+        <tr>
+          <td>Studio account data: email, studio name, games, builds, access tokens, and what a studio tells us when it asks for a feature</td>
+          <td>When a studio signs in, publishes or asks us something</td>
           <td>To run the studio's account and host its games</td>
           <td>Us; the studio name is shown to players</td>
         </tr>
@@ -111,6 +130,12 @@ Notes for matt (not published):
     <li><strong>Events the game sends:</strong> a game can mark moments (&ldquo;level 3 reached&rdquo;) for its studio.</li>
   </ul>
 
+  <h3>Leaderboards</h3>
+  <p>If a game has a leaderboard, the scores it sends (with sharing On) are kept as your best score on that game. Everyone can see a game's leaderboard: it shows your tester name, or, if you're signed in and choose &ldquo;Show my name on the leaderboard&rdquo; in the pause menu, your Betacade name and picture. Showing your name there also lets the game's studio see it's you in its playtests. Turn it off and both go back to your tester name at once.</p>
+
+  <h3>Games on other sites</h3>
+  <p>A studio can also publish its game elsewhere (such as itch.io) with Betacade's library in it. There, a small note tells you the game sends anonymous play data to its developer through Betacade, with a Don't share button. Unless you choose Don't share, or your browser sends Global Privacy Control or Do Not Track, the game sends the play data described above (sessions, errors with console lines, and the saves the studio names), along with the name of the site it's running on. You can sign in to Betacade from such a game: you approve it on Betacade's own page, and from then on your play there belongs to your account.</p>
+
   <h3>With sharing Off</h3>
   <p>None of the play data above is sent. The game still loads from our servers, so they still see the request information below, and anything you choose to write to the studio is still sent (next).</p>
   <p>Choosing Off adds one to a count, kept by game and hour, of how many times people chose not to share. The studio sees that count. Nothing about you goes with it: not your browser's key, your address or a session, and no cookie is set for it. A browser that remembers your choice doesn't count again.</p>
@@ -125,13 +150,14 @@ Notes for matt (not published):
   <p>Like any website, our servers and providers receive your IP address, browser user agent and request times whenever your browser loads a page, a game file or sends data. We use these to deliver the page and the game, to apply rate limits, and for security. We do not use your IP address to find your location or build a profile of you, and studios do not receive it.</p>
 
   <h2 id="accounts">4. Accounts and sign-in</h2>
-  <p><strong>Players</strong> don't need an account. If you sign in, we ask only for your email address and send it a 6-digit code. Signing in links the games you've played in that browser to your account, keeps your saves across devices, collects your games on <a href="{{ site.play_url }}">Your games</a>, and lets us email you when a studio replies. A sign-in cookie keeps you signed in on that site. It is used for nothing else.</p>
-  <p><strong>Studios</strong> sign in with an email code too. New studios join a waitlist, and we may ask a few questions about the studio and the game (such as the studio's name, what it's making and a link). A studio's account holds its games, builds, settings and any access tokens it creates, including tokens an AI coding agent uses on its behalf. A studio name is shown to players on the play page (&ldquo;Space Frogs by Pond Studio&rdquo;).</p>
+  <p><strong>Players</strong> don't need an account. If you sign in, we ask only for your email address and send it a 6-digit code. If you sign in with Discord instead, we receive your Discord account id, username, picture and email address from Discord. You can add a name and picture of your own to your account; they're shown only where you choose (Section 5). Signing in links the games you've played in that browser to your account, keeps your saves across devices, collects your games on <a href="{{ site.play_url }}">Your games</a>, and lets us email you when a studio replies. A sign-in cookie keeps you signed in on that site. It is used for nothing else.</p>
+  <p><strong>Studios</strong> sign in the same way. When a studio asks us for something, such as saves and replays or a new feature, we keep what it tells us (what it's making, a link, and how and where to reach it). A studio's account holds its games, builds, settings and any access tokens it creates, including tokens an AI coding agent uses on its behalf. A studio name is shown to players on the play page (&ldquo;Space Frogs by Pond Studio&rdquo;).</p>
 
   <h2 id="studios-see">5. What studios see, and what they don't</h2>
   <p>A studio sees the play data and notes for its own games only, and sees each tester under an anonymous tester name (for example &ldquo;Amber Fox&rdquo;), one per game. A studio can give a tester a private name of its own choosing to tell testers apart; that name is the studio's note and isn't shown to you or anyone else.</p>
   <ul>
     <li><strong>Studios never see your email address</strong>, whether or not you've signed in, and no part of Betacade gives it to them.</li>
+    <li><strong>Your name and picture</strong> reach a studio only if you choose: &ldquo;Show my name&rdquo; for that game on Your games, or &ldquo;Show my name on the leaderboard&rdquo;. Turning it off takes them away again at once.</li>
     <li>Studios never see your IP address or your Betacade account.</li>
     <li>When a studio replies to you, Betacade carries the message. If you've signed in, we email you that there is a reply; the studio does not learn the address it went to. You can turn those emails off, or block a studio's messages, for each game.</li>
     <li>On a game's <strong>Your data</strong> tab, signed-in players can see what that studio sees: the sessions, saved state and errors your plays sent.</li>
@@ -164,6 +190,7 @@ Notes for matt (not published):
         <tr><td>Cloudflare</td><td>DNS and network, delivers game files, and stores game builds and replay recordings</td></tr>
         <tr><td>PostHog</td><td>Counts visits and button clicks on betacade.com (this website only, never the play page, games or studio)</td></tr>
         <tr><td>Resend</td><td>Sends our email: sign-in codes and reply notices</td></tr>
+        <tr><td>Stripe</td><td>Sells and charges paid plans as the merchant of record, and holds payment details. For payments, Stripe is responsible for your information under its own privacy policy; we receive your plan, its status and a customer reference, never your card</td></tr>
         <tr><td>GitHub</td><td>Hosts this website (betacade.com), which collects nothing itself; see <a href="#website">Section 13</a></td></tr>
       </tbody>
     </table>
@@ -205,7 +232,8 @@ Notes for matt (not published):
       <tbody>
         <tr><td>Identifiers</td><td>Email address, for players and studios who sign in; IP address; the random player key; your anonymous tester name</td><td>Yes</td></tr>
         <tr><td>Internet or other electronic network activity</td><td>Gameplay data: sessions, play time, saved state, errors and console lines, replay recordings, in-game events; device and browser details; feedback and messages</td><td>Yes</td></tr>
-        <tr><td>Professional or commercial information</td><td>A studio's name and its answers to the waitlist questions</td><td>Studios only</td></tr>
+        <tr><td>Commercial information</td><td>Your paid plan and its history, if you subscribe (the payment itself is Stripe's)</td><td>Subscribers only</td></tr>
+        <tr><td>Professional information</td><td>A studio's name, and what it tells us when it asks for a feature</td><td>Studios only</td></tr>
         <tr><td>Inferences</td><td>&mdash;</td><td>No</td></tr>
         <tr><td>Sensitive personal information</td><td>&mdash;</td><td>No</td></tr>
         <tr><td>Precise geolocation, biometric, financial, health</td><td>&mdash;</td><td>No</td></tr>
@@ -235,7 +263,7 @@ Notes for matt (not published):
   <p>We treat a Global Privacy Control signal as a choice to send no play data: a browser sending it starts with sharing Off (<a href="#controls">Section 9</a>). Since we don't sell or share personal information, there is no sale or sharing for it to stop.</p>
 
   <h2 id="website">13. This website</h2>
-  <p>This website, betacade.com, sets no cookies and stores nothing in your browser. Its scripts copy the agent prompt when you ask, send the studio sign-up form (your email, and a name if you give one) to the waitlist, and count visits with PostHog: which pages are viewed, where visitors came from, and clicks on Publish a game and Play a game (with no email or anything you type). PostHog receives your IP address and browser details to do that, as our service provider; it doesn't track you across other sites, and it isn't loaded at all if your browser sends Global Privacy Control or Do Not Track. The play page, the games and the studio never use PostHog: what you do there reaches only the game's studio, as described above. It is a set of static pages hosted on GitHub Pages; GitHub receives your IP address when your browser fetches a page, as any web host does, and handles it under its own privacy statement. The play page, the player pages and the studio are separate sites (play.betacade.com and api.betacade.com), described in the sections above.</p>
+  <p>This website, betacade.com, sets no cookies and stores nothing in your browser. Its scripts copy the agent prompt when you ask, and count visits with PostHog: which pages are viewed, where visitors came from, and clicks on Publish a game and Play a game (with no email or anything you type). PostHog receives your IP address and browser details to do that, as our service provider; it doesn't track you across other sites, and it isn't loaded at all if your browser sends Global Privacy Control or Do Not Track. The play page, the games and the studio never use PostHog: what you do there reaches only the game's studio, as described above. It is a set of static pages hosted on GitHub Pages; GitHub receives your IP address when your browser fetches a page, as any web host does, and handles it under its own privacy statement. The play page, the player pages and the studio are separate sites (play.betacade.com and api.betacade.com), described in the sections above.</p>
 
   <h2 id="security">14. Security</h2>
   <p>Every connection is encrypted with HTTPS. Each game runs on its own web origin, inside a sandboxed frame, so a game can't read the play page, your sign-in, or another game's data. Sign-in uses one-time email codes, so there is no password for us to store or for you to reuse. No system is perfectly secure; if we learn of a breach that affects you, we will tell you as the law requires.</p>

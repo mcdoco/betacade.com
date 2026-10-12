@@ -16,6 +16,7 @@ Notes for matt (not published):
 <main class="legal">
   <div class="eyebrow">Legal</div>
   <h1>Terms of Service</h1>
+  {% comment %} TODO(matt): the publish date; bump CURRENT_LEGAL in the app (apps/api/src/lib/legal.ts) to the same date in the billing release. {% endcomment %}
   <p class="updated">Last updated: October 2, 2026</p>
 
   <p class="lead">These Terms of Service (&ldquo;Terms&rdquo;) govern your use of Betacade, a playtest platform for web games operated by McDoCo, LLC. They cover playing games here and publishing them. By using Betacade, you agree to them.</p>
@@ -29,7 +30,7 @@ Notes for matt (not published):
     <ol>
       <li><a href="#eligibility">Who can use Betacade</a></li>
       <li><a href="#accounts">Accounts and sign-in</a></li>
-      <li><a href="#waitlist">The studio waitlist</a></li>
+      <li><a href="#new-studios">New studios</a></li>
       <li><a href="#playing">Playing games</a></li>
       <li><a href="#studio-content">Your games and the licence you give us</a></li>
       <li><a href="#studio-data">Your game's data and your players</a></li>
@@ -38,6 +39,8 @@ Notes for matt (not published):
       <li><a href="#reports">Reports and takedowns</a></li>
       <li><a href="#ours">Our service and your feedback about it</a></li>
       <li><a href="#early">An early service</a></li>
+      <li><a href="#paid">Paid plans</a></li>
+      <li><a href="#fair-use">Using Betacade fairly</a></li>
       <li><a href="#disclaimers">Disclaimers</a></li>
       <li><a href="#liability">Limitation of liability</a></li>
       <li><a href="#indemnification">Indemnification</a></li>
@@ -53,12 +56,12 @@ Notes for matt (not published):
   <p>You must be at least 13 years old to use Betacade. If you are under 18, or under the age of majority where you live, you may use it only with a parent's or guardian's permission. To publish games as a studio you must be at least 18 and able to enter a binding contract, and if you publish on behalf of a company or team, you confirm you are allowed to accept these Terms for it.</p>
 
   <h2 id="accounts">2. Accounts and sign-in</h2>
-  <p><strong>Players</strong> can play without an account. If you sign in, you do so with a code sent to your email address. You can keep using Betacade signed out at any time.</p>
-  <p><strong>Studios</strong> sign in with an email code, and must have been let in from the waitlist (Section 3) to publish. A studio can create access tokens and approve an AI coding agent or other tool to act for it through the API. Anything done with your account or your tokens is your responsibility, including by an agent you approved. Keep tokens secret and revoke any you think have leaked.</p>
+  <p><strong>Players</strong> can play without an account. If you sign in, you do so with a code sent to your email address, or with Discord. You can also sign in from a game published elsewhere (such as itch.io) that uses Betacade: you approve that on Betacade's own page, and your play there then belongs to your account. You can keep using Betacade signed out at any time.</p>
+  <p><strong>Studios</strong> sign in the same way, and can publish straight away, within the limits for new studios (Section 3). A studio can create access tokens and approve an AI coding agent or other tool to act for it through the API. Anything done with your account or your tokens is your responsibility, including by an agent you approved. Keep tokens secret and revoke any you think have leaked.</p>
   <p>Give us an email address you control, and tell us at <a href="mailto:hello@betacade.com">hello@betacade.com</a> if you think someone else has got into your account.</p>
 
-  <h2 id="waitlist">3. The studio waitlist</h2>
-  <p>We are letting studios in gradually. When you sign in as a new studio, you join the waitlist, and we may ask you a few questions about your studio and your game. Joining doesn't guarantee access or a date; we decide who to let in and when. Being let in doesn't commit you to anything, and you can ask to be taken off the waitlist at any time. Playing is not waitlisted.</p>
+  <h2 id="new-studios">3. New studios</h2>
+  <p>A new studio can publish up to 3 games and 20 builds a day, and its games are kept out of search engines, until we've talked with it or it subscribes to a paid plan (Section 12). Some features, such as saves and replays, are switched on the same way. We may change these limits, and lift them for a studio we know.</p>
 
   <h2 id="playing">4. Playing games</h2>
   <p>Games on Betacade are made by studios, not by us. Many are unfinished: they may crash, lose progress or change between builds, and a studio may remove a game or a build at any time. Studios are responsible for their games' content. We don't review every game before it goes up, but we take action on games that break these Terms (Sections 7 and 9).</p>
@@ -90,44 +93,75 @@ Notes for matt (not published):
     <li>Track players across other sites, or collect data for advertising or for sale.</li>
     <li>Use Betacade mainly to host files or a site that isn't a game.</li>
   </ul>
-  <p>You also must not get around rate limits, size limits or the waitlist, use someone else's account or tokens without permission, or use the Service in a way that breaks the law.</p>
+  <p>Section 13 covers how everyone, studios and players alike, must use the Service itself.</p>
 
   <h2 id="conduct">8. Feedback and messages</h2>
   <p>Players and studios can write to each other through Betacade. Be decent: no harassment, threats, hate, spam, sexual content directed at someone who didn't ask for it, or attempts to find out who someone is behind their alias. Studios: write to testers about your game, not to market unrelated things, and respect a tester who has blocked your messages. Players: feedback you send a studio can be used by that studio to improve its game, without owing you anything for it.</p>
   <p>We don't read messages as a matter of course, but we may review them if they are reported to us or we need to for security.</p>
 
   <h2 id="reports">9. Reports and takedowns</h2>
-  <p>If a game or message breaks these Terms, or you think it infringes your rights, email <a href="mailto:hello@betacade.com">hello@betacade.com</a> with the game's link and what's wrong. For copyright, include enough for us to identify the work and the material, and your contact details.</p>
+  <p>If a game or message breaks these Terms, or you think it infringes your rights, email <a href="mailto:hello@betacade.com">hello@betacade.com</a> with the game's link and what's wrong.</p>
+  {% comment %} TODO(matt): the designated agent's name and address once registered with the US Copyright Office (manual-tests.md, Business: DMCA). {% endcomment %}
+  <p><strong>Copyright (DMCA).</strong> To report material you believe infringes your copyright, send our designated agent a written notice with: your physical or electronic signature; the copyrighted work; the material on Betacade you say infringes it, with its link; your name, address, phone number and email; a statement that you believe in good faith the use isn't authorized by the owner, its agent or the law; and a statement, under penalty of perjury, that the notice is accurate and that you are the owner or authorized to act for them. Our designated agent: McDoCo, LLC, Attn: Copyright Agent, [address], <a href="mailto:hello@betacade.com">hello@betacade.com</a>.</p>
+  <p>If we remove a studio's material after a notice, we'll tell the studio. A studio that believes it was removed by mistake can send a counter-notice with: its signature; the material removed and where it was; a statement under penalty of perjury that it believes in good faith it was removed by mistake or misidentification; and its name, address and phone number, with consent to the jurisdiction of the federal court for its address (or, outside the US, any judicial district where we may be found) and to accept service from the person who sent the notice. We'll send it on, and restore the material in 10 to 14 business days unless the sender tells us they've gone to court.</p>
+  <p><strong>Repeat infringers.</strong> We close the accounts of studios that repeatedly publish infringing material.</p>
   <p>We may remove or disable any game, build or message, or limit or suspend an account, if we believe it breaks these Terms or the law, or puts players or the Service at risk, with or without notice. Where it's safe to, we'll tell the studio what we removed and why, and give them a way to respond.</p>
 
   <h2 id="ours">10. Our service and your feedback about it</h2>
   <p>The Service, its software, design and the Betacade name belong to McDoCo. These Terms don't give you any rights to them beyond using the Service. If you send us ideas or suggestions about Betacade, we may use them without obligation to you.</p>
 
   <h2 id="early">11. An early service</h2>
-  <p>Betacade is new, and we are changing it often. We may add, change or remove features, set or change limits (such as build sizes, files per build, and how much history is kept), or stop offering the Service. Betacade is free today. If we introduce paid plans, we'll say so before charging anyone, and nothing you've published will start costing money without your agreement.</p>
+  <p>Betacade is new, and we are changing it often. We may add, change or remove features, set or change limits (such as build sizes, files per build, and how much history is kept), or stop offering the Service. Playing is free, and so is publishing on the Free plan. Nothing you've published will start costing money without your agreement.</p>
 
-  <h2 id="disclaimers">12. Disclaimers</h2>
+  <h2 id="paid">12. Paid plans</h2>
+  <p>Studios can subscribe to <strong>Studio Pro</strong> and players to <strong>Supporter</strong>. What each plan includes, and its price, is on our <a href="/pricing.html">pricing page</a> and shown before you subscribe.</p>
+  <ul>
+    <li><strong>Who sells it.</strong> Subscriptions are sold and charged by Stripe, acting as the merchant of record (the seller) under its own terms, which you accept at checkout. Stripe collects any sales tax or VAT, sends your receipts, and holds your payment details; we never see your card number.</li>
+    <li><strong>Renewal.</strong> A subscription renews automatically each month, at the price you agreed to, until you cancel. You'll see the price and how renewal works before you subscribe, and get a confirmation by email.</li>
+    <li><strong>Cancelling.</strong> Cancel any time online: from the studio's Account page or your player page (Manage billing). The plan stays until the end of the month you've paid for, then ends; you won't be charged again.</li>
+    <li><strong>Refunds.</strong> Payments aren't refunded for part of a month, except where the law requires it or where we choose to. Ask at <a href="mailto:hello@betacade.com">hello@betacade.com</a>.</li>
+    <li><strong>Founding plans.</strong> Founding Pro and Founding Supporter keep their price for as long as the subscription continues without a break, even if the regular price changes.</li>
+    <li><strong>Price changes.</strong> We may change other prices with at least 30 days' notice by email, before your next renewal at the new price. You can cancel before it takes effect.</li>
+    <li><strong>If a payment fails,</strong> Stripe will try again for a while. If it still can't be paid, the subscription ends and the account goes back to Free.</li>
+    <li><strong>Going back to Free never deletes anything.</strong> Your games, builds, saves and play data stay. What a paid plan added beyond Free is hidden or paused, not removed, and comes back if you subscribe again.</li>
+  </ul>
+
+  <h2 id="fair-use">13. Using Betacade fairly</h2>
+  <p>Whether you play or publish, you may not:</p>
+  <ul>
+    <li>reverse engineer, decompile or disassemble Betacade's software, except where the law lets you do so regardless of this clause;</li>
+    <li>get round, or try to get round, access controls, rate limits, size limits, the limits for new studios, the play page's privacy choices, or any measure that protects other people's games, saves or data;</li>
+    <li>access, or try to access, accounts, games, play data or messages that aren't yours, or use someone else's account or tokens without permission;</li>
+    <li>interfere with or disrupt the Service, including load or security testing without our written permission;</li>
+    <li>copy, scrape or harvest content or data by automated means, other than through our documented API within its limits;</li>
+    <li>submit scores, achievements or play data you know to be false in order to mislead other players or studios;</li>
+    <li>use the Service in a way that breaks the law.</li>
+  </ul>
+  <p>If you find a security problem, tell us at <a href="mailto:hello@betacade.com">hello@betacade.com</a> and give us a reasonable time to fix it. We won't pursue good-faith research that follows these rules and doesn't access other people's data.</p>
+
+  <h2 id="disclaimers">14. Disclaimers</h2>
   <p class="caps">THE SERVICE AND THE GAMES ON IT ARE PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE,&rdquo; WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, SECURE OR ERROR-FREE, THAT ANY GAME IS SAFE OR WORKS, OR THAT SAVES, PLAY DATA OR BUILDS WILL BE PRESERVED WITHOUT LOSS. KEEP YOUR OWN COPIES OF YOUR BUILDS.</p>
 
-  <h2 id="liability">13. Limitation of liability</h2>
+  <h2 id="liability">15. Limitation of liability</h2>
   <p class="caps">TO THE MAXIMUM EXTENT PERMITTED BY LAW, McDOCO AND ITS OFFICERS, MEMBERS, EMPLOYEES AND AGENTS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA OR GOODWILL, ARISING OUT OF OR RELATING TO THE SERVICE OR ANY GAME ON IT. McDOCO&rsquo;S TOTAL LIABILITY FOR ALL CLAIMS RELATING TO THE SERVICE WILL NOT EXCEED THE GREATER OF (A) THE AMOUNTS YOU PAID US FOR THE SERVICE IN THE 12 MONTHS BEFORE THE CLAIM, OR (B) ONE HUNDRED U.S. DOLLARS ($100). SOME JURISDICTIONS DO NOT ALLOW CERTAIN LIMITATIONS, SO SOME OF THE ABOVE MAY NOT APPLY TO YOU.</p>
 
-  <h2 id="indemnification">14. Indemnification</h2>
+  <h2 id="indemnification">16. Indemnification</h2>
   <p>If you are a studio, you agree to indemnify and hold harmless McDoCo and its officers, members, employees and agents from any claims, liabilities, damages and expenses (including reasonable attorneys&rsquo; fees) arising out of Your Content, what your game collects from players, your use of the Service, or your breach of these Terms or the law.</p>
 
-  <h2 id="termination">15. Suspension and termination</h2>
+  <h2 id="termination">17. Suspension and termination</h2>
   <p>You can stop using Betacade at any time. A player can delete their play data for any game from that game's Your data tab; anyone can ask us to close their account (see <a href="/data-request.html">Data requests</a>). A studio that wants its games or account removed can ask us at <a href="mailto:hello@betacade.com">hello@betacade.com</a>.</p>
+  <p>Closing your account cancels any paid plan on it. If we end your access for breaking these Terms, a paid plan ends with it and isn't refunded; if we stop offering the Service or a paid plan, we'll refund what you've paid for the time left.</p>
   <p>We may suspend or end your access, or remove your content, as Section 9 describes, or if we stop offering the Service. Where we can, we'll give studios notice first. Sections that by their nature should survive termination, including ownership, the licence for backups, disclaimers, limitation of liability, indemnification and governing law, will survive.</p>
 
-  <h2 id="changes">16. Changes to these Terms</h2>
+  <h2 id="changes">18. Changes to these Terms</h2>
   <p>We may update these Terms. We'll post the new version here and update the date above. For a material change to these Terms or the <a href="/privacy.html">Privacy Policy</a>, signed-in players and studios will be asked to accept the new version the next time they sign in. Otherwise, using the Service after a change takes effect means you accept it.</p>
 
-  <h2 id="governing-law">17. Governing law and disputes</h2>
+  <h2 id="governing-law">19. Governing law and disputes</h2>
   {% comment %} TODO(matt): confirm the governing law and venue with the lawyer. This copies tend2thrive.com's terms (same company): California. {% endcomment %}
   <p>These Terms are governed by the laws of the State of California, without regard to its conflict-of-laws rules. Any dispute arising out of or relating to these Terms or the Service will be brought exclusively in the state or federal courts located in California, and you consent to their personal jurisdiction.</p>
   <p>Before filing anything, please email <a href="mailto:hello@betacade.com">hello@betacade.com</a> with a short description of the problem. Most things can be sorted out that way, and we'll make a genuine attempt to.</p>
 
-  <h2 id="general">18. General</h2>
+  <h2 id="general">20. General</h2>
   <p><strong>Severability.</strong> If a provision of these Terms is held unenforceable, it will be limited or removed to the minimum extent necessary, and the rest stays in force.</p>
   <p><strong>No waiver.</strong> Not enforcing a provision is not a waiver of our right to enforce it later.</p>
   <p><strong>Entire agreement.</strong> These Terms and the <a href="/privacy.html">Privacy Policy</a> are the whole agreement between you and McDoCo about the Service.</p>
@@ -136,7 +170,7 @@ Notes for matt (not published):
   <p><strong>Events outside our control.</strong> We are not liable for delays or failures caused by things beyond our reasonable control, including outages at a provider the Service depends on.</p>
   <p><strong>No third-party beneficiaries.</strong> These Terms create no rights for anyone other than you and McDoCo.</p>
 
-  <h2 id="contact">19. Contact</h2>
+  <h2 id="contact">21. Contact</h2>
   <p>
     McDoCo, LLC<br />
     <a href="mailto:hello@betacade.com">hello@betacade.com</a><br />
