@@ -8,8 +8,8 @@ description: "What Betacade collects when you play or publish a game, why, who s
 
 {%- comment -%}
 Notes for matt (not published):
-- The app versions this document in betacade's lib/legal.ts. Bump it to 2026-10-02
-  when this goes live so everyone accepts the new text (launch-friday.md step 7).
+- The app versions this document in betacade's lib/legal.ts. Bump it to the
+  "Last updated" date when this goes live so everyone accepts the new text (launch-friday.md step 7).
 - GPC: Section 9 promises that a browser sending Sec-GPC: 1 starts with sharing
   Off. A grep of apps/ on 2026-09-30 found no Sec-GPC handling yet. TODO(matt):
   build it (or take the sentence out) before launch traffic.
@@ -20,8 +20,7 @@ Notes for matt (not published):
 <main class="legal">
   <div class="eyebrow">Legal</div>
   <h1>Privacy Policy</h1>
-  {% comment %} TODO(matt): the publish date, with terms.html's. {% endcomment %}
-  <p class="updated">Last updated: October 2, 2026</p>
+  <p class="updated">Last updated: October 12, 2026</p>
 
   <p class="lead">Betacade hosts web games so the people making them can playtest them. This policy explains what we collect when you play a game or publish one, why, who sees it, how long we keep it, and what you can do about it. Betacade is operated by McDoCo, LLC.</p>
 
@@ -122,7 +121,7 @@ Notes for matt (not published):
 
   <h3>With sharing On</h3>
   <ul>
-    <li><strong>Play sessions:</strong> when a session starts and ends, play time, which build you played, and whether you came back.</li>
+    <li><strong>Play sessions:</strong> when a session starts and ends, play time, which build you played, whether you came back, and which of the studio's own links (if any) brought you to the game.</li>
     <li><strong>The game's saved state:</strong> what the game writes to your browser's storage for that game (localStorage and IndexedDB), with the time of each change, synced as you play. This is how studios see your progress, and how your saves come back on another device. What a game stores there is up to its studio (see <a href="#studio-role">Section 6</a>).</li>
     <li><strong>Errors and console lines:</strong> uncaught errors in the game, and the most recent lines the game wrote to the browser console before each error (up to 200, each shortened).</li>
     <li><strong>Browser details:</strong> your browser, screen and window size, and the kind of device (for example phone or desktop).</li>
@@ -131,7 +130,7 @@ Notes for matt (not published):
   </ul>
 
   <h3>Leaderboards</h3>
-  <p>If a game has a leaderboard, the scores it sends (with sharing On) are kept as your best score on that game. Everyone can see a game's leaderboard: it shows your tester name, or, if you're signed in and choose &ldquo;Show my name on the leaderboard&rdquo; in the pause menu, your Betacade name and picture. Showing your name there also lets the game's studio see it's you in its playtests. Turn it off and both go back to your tester name at once.</p>
+  <p>If a game has a leaderboard, the scores it sends (with sharing On) are kept as your best score on that game. Everyone can see a game's leaderboard, and its top score where the game is listed on a jam page: it shows your tester name, or, if you're signed in and choose &ldquo;Show my name on the leaderboard&rdquo; in the pause menu, your Betacade name and picture. Showing your name there also lets the game's studio see it's you in its playtests. Turn it off and both go back to your tester name at once.</p>
 
   <h3>Games on other sites</h3>
   <p>A studio can also publish its game elsewhere (such as itch.io) with Betacade's library in it. There, a small note tells you the game sends anonymous play data to its developer through Betacade, with a Don't share button. Unless you choose Don't share, or your browser sends Global Privacy Control or Do Not Track, the game sends the play data described above (sessions, errors with console lines, and the saves the studio names), along with the name of the site it's running on. You can sign in to Betacade from such a game: you approve it on Betacade's own page, and from then on your play there belongs to your account.</p>
@@ -230,7 +229,7 @@ Notes for matt (not published):
     <table>
       <thead><tr><th>Category</th><th>What it is here</th><th>Collected?</th></tr></thead>
       <tbody>
-        <tr><td>Identifiers</td><td>Email address, for players and studios who sign in; IP address; the random player key; your anonymous tester name</td><td>Yes</td></tr>
+        <tr><td>Identifiers</td><td>Email address, for players and studios who sign in; your Discord account id and username, if you sign in with Discord; IP address; the random player key; your anonymous tester name; the name and picture you set, if you do</td><td>Yes</td></tr>
         <tr><td>Internet or other electronic network activity</td><td>Gameplay data: sessions, play time, saved state, errors and console lines, replay recordings, in-game events; device and browser details; feedback and messages</td><td>Yes</td></tr>
         <tr><td>Commercial information</td><td>Your paid plan and its history, if you subscribe (the payment itself is Stripe's)</td><td>Subscribers only</td></tr>
         <tr><td>Professional information</td><td>A studio's name, and what it tells us when it asks for a feature</td><td>Studios only</td></tr>
