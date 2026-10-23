@@ -225,6 +225,14 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 @media (prefers-color-scheme: dark) { .kb-tag.err { color: #ff8a80; } .kb-tag.bug, .ib-chip.bug, .ib-event.filed, .kb-col.doing .kb-head { color: #f2b067; } }
 @media (max-width: 760px) { .stack { justify-self: stretch; max-width: none; } }
 @media (max-width: 420px) { .kb { grid-template-columns: 1fr 1fr; } .kb-col:last-child { display: none; } }
+/* The issue board's four lanes, as the studio has them; two by two on a phone. */
+.kb.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.kb-col.inbox { background: var(--soft); border-top-color: var(--faint); }
+.kb-col.inbox .kb-head { color: var(--text2); }
+.kb-col.test { background: rgba(124, 58, 237, .07); border-top-color: #7c3aed; }
+.kb-col.test .kb-head { color: #7c3aed; }
+@media (prefers-color-scheme: dark) { .kb-col.test .kb-head { color: #b79cf7; } }
+@media (max-width: 520px) { .kb.four { grid-template-columns: 1fr 1fr; } .kb.four .kb-col:last-child { display: grid; } }
 
 /* Feedback: the notes, and the thread with one player. */
 .ib-filters { display: inline-flex; gap: 8px; font-size: 11.5px; color: var(--text2); }
@@ -271,12 +279,6 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .m-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--pbg); color: var(--pfg); border-radius: 8px;
          padding: 8px 14px; font-weight: 600; white-space: nowrap; }
 .m-desc { color: var(--text2); font-size: 13px; line-height: 1.5; }
-.m-history { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
-.m-history li { display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: 10px; align-items: start; }
-.m-history i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 5px; }
-.m-history li > span { display: grid; }
-.m-history b { font-size: 13px; }
-.m-history .m-faint { font-size: 12px; }
 
 /* ── Device frames: a browser window, a phone and a gamepad ── */
 .bw-bar { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: var(--soft); border-bottom: 1px solid var(--line); }
@@ -362,7 +364,7 @@ section + section { border-top: 1px solid var(--line); }
 .pricing-head h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; letter-spacing: -.03em; }
 .pricing-head .sub { color: var(--text2); font-size: 1.05rem; }
 .tiers-wrap { padding-top: 24px; border-top: 0 !important; }
-.tiers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+.tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
 .tier { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
 .tier > .btn, .tier > .fine { margin-top: auto; }   /* the card's last line sits at the bottom; the list stays tight */
 .tier .price span { font-size: 14px; font-weight: 500; color: var(--text2); letter-spacing: 0; margin-left: 2px; }
@@ -372,12 +374,13 @@ section + section { border-top: 1px solid var(--line); }
 .tier-tag { font-size: 11px; font-weight: 700; border-radius: 999px; padding: 2px 9px; background: var(--okbg); color: var(--okfg); white-space: nowrap; }
 .tier-tag.later { background: var(--soft); color: var(--text2); }
 .tier .price { font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; }
+.tier .founding { font-size: 13px; font-weight: 600; color: var(--accent); margin-top: -4px; }
+
 .tier .who { color: var(--text2); font-size: 14px; }
 .tier .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text2); margin-top: 4px; }
 .tier ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 5px; align-content: start; font-size: 14px; }
 .tier .btn { align-self: flex-start; margin-top: 6px; }
-@media (max-width: 1000px) { .tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .tiers { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .tiers { grid-template-columns: 1fr; } }
 
 /* ── The studio form ── */
 .studio-dialog { width: min(26rem, calc(100% - 32px)); border: 1px solid var(--line); border-radius: 14px; padding: 24px;

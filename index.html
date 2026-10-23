@@ -15,7 +15,7 @@ description: "Put a web game build up, send players one link, and watch how they
           <a class="btn lg" href="{{ site.studio_url }}" data-studio>Publish a game</a>
           <a class="btn lg ghost" href="{{ site.game_url }}">Play a game</a>
         </div>
-        <p class="aside">Agents: start at <a href="{{ site.llms_url }}">llms.txt</a>.</p>
+        <p class="aside">Agents: start at <a href="{{ site.llms_url }}">llms.txt</a>. Questions? Ask in <a href="{{ site.discord_url }}" rel="noopener">the Discord</a>.</p>
       </div>
       {% include mock-dashboard.html %}
     </div>
@@ -28,12 +28,12 @@ description: "Put a web game build up, send players one link, and watch how they
       <div class="step">
         <div class="step-text">
           <h3><span class="num">1</span>Set up your game page</h3>
-          <p>A title, a description, a cover image and a web build, with a Play now button and a history of every update. Do it yourself in the studio, or have your agent do it.</p>
+          <p>A title, a description, a cover image and a web build. Players get a play page that opens with a welcome card, and if you like, an About page with screenshots that search engines can find. Do it yourself in the studio, or have your agent do it.</p>
           <div class="prompt"><code>Put this game on Betacade.
 Start at https://api.betacade.com/llms.txt
 MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy hidden>Copy</button></div>
         </div>
-        {% include mock-browser.html url="play.betacade.com/games/moon-toads" inner="mock-gamepage-body.html" label="An example game page in a browser: a cover image, the title and studio, a description, a Play now button, and a history of updates" %}
+        {% include mock-browser.html url="play.betacade.com/g/moon-toads/about" inner="mock-gamepage-body.html" label="An example game's About page in a browser: a cover image, the title and studio, a Play in your browser button, and a description" %}
       </div>
 
       <div class="step">
@@ -55,7 +55,7 @@ MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy h
       <div class="step">
         <div class="step-text">
           <h3><span class="num">4</span>Quash bugs</h3>
-          <p>Feedback, errors and bugs land on one board, each with the moment it happened. Turn a note into a bug and move it along as you fix it.</p>
+          <p>Feedback lands on one board beside your issues, each with the moment it happened. Turn a note into an issue and move it along, from Issues to In progress to Ready to test, then Fixed or Won't fix. Players who reported it are told which build fixed it.</p>
         </div>
         {% include mock-board.html %}
       </div>
@@ -73,12 +73,97 @@ MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy h
 
   <section class="players">
     <div class="wrap">
+      <h2>Meet your players where they are</h2>
+      <p class="lede">Run your playtests and the community around your game together, without moving anyone off Discord.</p>
+      <div class="facts">
+        <div>
+          <h3>Sign in with Discord.</h3>
+          <p>Players and studios can sign in with Discord, or link it to the account they already have.</p>
+        </div>
+        <div>
+          <h3>Your Discord, on your game.</h3>
+          <p>Add your server's invite and players see "Join the Pond Studio Discord" on the welcome and in the pause menu. Give the Discord its own tracked link to see how many players came from it.</p>
+        </div>
+        <div>
+          <h3>Notes from Discord.</h3>
+          <p>If your game's channel is on the Betacade Discord, right-click a message there, pick Apps, then Send to Betacade, and it lands in your game's inbox. Roles there show who plays (Playtester) and who makes games (Studio).</p>
+        </div>
+      </div>
+      <p class="lede"><a href="{{ site.discord_url }}" rel="noopener">Join the Betacade Discord</a></p>
+    </div>
+  </section>
+
+  <section class="players">
+    <div class="wrap">
+      <h2>Work as a team</h2>
+      <p class="lede">Invite people by email. Viewers are free on any plan; developers need Pro.</p>
+      <div class="facts">
+        <div>
+          <h3>Viewers and developers.</h3>
+          <p>Viewers see dashboards, playtests, replays and feedback. Developers also deploy, change settings and reply to testers. Up to 3 people on Free, 10 on Pro.</p>
+        </div>
+        <div>
+          <h3>Who did what.</h3>
+          <p>The dashboard says who shipped each build, and a tester's thread who wrote each reply. Players never see who's in the studio, only its name.</p>
+        </div>
+        <div>
+          <h3>Private builds.</h3>
+          <p>Give a build to one group of people while everyone else keeps playing the public one. Replays and Rewind work on it too. On Pro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="players">
+    <div class="wrap">
+      <h2>Show it off</h2>
+      <p class="lede">For when your game is ready for a crowd.</p>
+      <div class="facts">
+        <div>
+          <h3>Leaderboards and achievements.</h3>
+          <p>A leaderboard of the scores your game sends, with names only for players who opt in. Achievements are rules over the saves that Betacade checks, so players can't award themselves.</p>
+        </div>
+        <div>
+          <h3>Live pages.</h3>
+          <p>Put a page on a big screen at an event: a QR code to play, a running scoreboard, and replays of the best runs.</p>
+        </div>
+        <div>
+          <h3>Jams.</h3>
+          <p>Make a jam page and share its code. Games join, players play and vote for their top 3, and the results show when voting closes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="players">
+    <div class="wrap">
+      <h2>Built for your agent</h2>
+      <p class="lede">Claude Code, Cursor or Codex can do the whole loop.</p>
+      <div class="facts">
+        <div>
+          <h3>One prompt.</h3>
+          <p>Give your agent the prompt above. It signs in once with a code you approve, uploads the build and hands back the link. Files that haven't changed aren't uploaded again.</p>
+        </div>
+        <div>
+          <h3>One guide.</h3>
+          <p><a href="{{ site.llms_url }}">llms.txt</a> covers deploying, setting up the page, reading who played and what they said, and filing bugs. Every answer from the API tells the agent what to do next.</p>
+        </div>
+        <div>
+          <h3>A versioned API.</h3>
+          <p>Every route is versioned and in the OpenAPI spec. The <a href="{{ site.studio_url }}/changelog">changelog</a> marks anything that breaks and says how to migrate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="players">
+    <div class="wrap">
       <h2>For players</h2>
       <p class="lede">Playing is free, in the browser, with no account.</p>
       <div class="facts">
         <div>
           <h3>Your saves follow you.</h3>
-          <p>Sign in with your email and your saves come with you to any device. Pick up where you left off, switch between saves, or go back to an earlier one.</p>
+          <p>Sign in with your email or Discord and your saves come with you to any device. Pick up where you left off, switch between saves, or go back to an earlier one.</p>
         </div>
         <div>
           <h3>Anonymous to studios.</h3>
@@ -95,7 +180,7 @@ MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy h
   <section class="closing">
     <div class="wrap">
       <h2>It's free to play and free to publish</h2>
-      <p class="aside"><a class="quiet" href="/pricing.html">See pricing</a></p>
+      <p class="aside"><a class="quiet" href="/pricing.html">See pricing</a> · <a class="quiet" href="{{ site.discord_url }}" rel="noopener">Join the Discord</a></p>
       <div class="cta-row center">
         <a class="btn lg" href="{{ site.studio_url }}" data-studio>Publish a game</a>
         <a class="btn lg ghost" href="{{ site.game_url }}">Play a game</a>

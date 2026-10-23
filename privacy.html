@@ -20,7 +20,7 @@ Notes for matt (not published):
 <main class="legal">
   <div class="eyebrow">Legal</div>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: October 12, 2026</p>
+  <p class="updated">Last updated: October 22, 2026</p>
 
   <p class="lead">Betacade hosts web games so the people making them can playtest them. This policy explains what we collect when you play a game or publish one, why, who sees it, how long we keep it, and what you can do about it. Betacade is operated by McDoCo, LLC.</p>
 
@@ -67,7 +67,7 @@ Notes for matt (not published):
           <td>Play data: sessions and play time, the game's saved state, errors and console lines, browser, screen size and device type, and replay recordings on builds that make them</td>
           <td>Only while sharing is On</td>
           <td>To show the game's studio how their game is played, and to keep and restore your saves</td>
-          <td>The game's studio, under your tester name; you, on Your data</td>
+          <td>The game's studio and the people it has invited to it, under your tester name; you, on Your data</td>
         </tr>
         <tr>
           <td>Feedback and messages you write to a studio</td>
@@ -100,16 +100,22 @@ Notes for matt (not published):
           <td>Everyone, under your tester name (or your name, if you choose); the studio</td>
         </tr>
         <tr>
+          <td>Your Betacade roles on Discord: whether you have a Betacade account and own a game, when you joined, your Betacade name, and Discord's tokens for it</td>
+          <td>Only if you connect Betacade from Discord's Linked Roles menu</td>
+          <td>So the Betacade Discord server can give you its Playtester and Studio roles</td>
+          <td>Us and Discord</td>
+        </tr>
+        <tr>
           <td>Subscription: your plan, its status and Stripe's customer reference</td>
           <td>If you subscribe to a paid plan</td>
           <td>To give you the plan you paid for</td>
           <td>Us. Stripe, the seller, handles the payment itself (Section 8)</td>
         </tr>
         <tr>
-          <td>Studio account data: email, studio name, games, builds, access tokens, and what a studio tells us when it asks for a feature</td>
-          <td>When a studio signs in, publishes or asks us something</td>
+          <td>Studio account data: email, studio name, games, builds, access tokens, the email addresses a studio invites to work with it or adds to its groups, who in the studio deployed a build or sent a reply, and what a studio tells us when it asks for a feature</td>
+          <td>When a studio signs in, publishes, invites someone or asks us something</td>
           <td>To run the studio's account and host its games</td>
-          <td>Us; the studio name is shown to players</td>
+          <td>Us and the studio (Section 4); the studio name is shown to players</td>
         </tr>
       </tbody>
     </table>
@@ -121,7 +127,7 @@ Notes for matt (not published):
 
   <h3>With sharing On</h3>
   <ul>
-    <li><strong>Play sessions:</strong> when a session starts and ends, play time, which build you played, whether you came back, and which of the studio's own links (if any) brought you to the game.</li>
+    <li><strong>Play sessions:</strong> when a session starts and ends, play time, which build you played, whether you came back, and which of the studio's own links, or the campaign name in the link (if any), brought you to the game.</li>
     <li><strong>The game's saved state:</strong> what the game writes to your browser's storage for that game (localStorage and IndexedDB), with the time of each change, synced as you play. This is how studios see your progress, and how your saves come back on another device. What a game stores there is up to its studio (see <a href="#studio-role">Section 6</a>).</li>
     <li><strong>Errors and console lines:</strong> uncaught errors in the game, and the most recent lines the game wrote to the browser console before each error (up to 200, each shortened).</li>
     <li><strong>Browser details:</strong> your browser, screen and window size, and the kind of device (for example phone or desktop).</li>
@@ -131,6 +137,12 @@ Notes for matt (not published):
 
   <h3>Leaderboards</h3>
   <p>If a game has a leaderboard, the scores it sends (with sharing On) are kept as your best score on that game. Everyone can see a game's leaderboard, and its top score where the game is listed on a jam page: it shows your tester name, or, if you're signed in and choose &ldquo;Show my name on the leaderboard&rdquo; in the pause menu, your Betacade name and picture. Showing your name there also lets the game's studio see it's you in its playtests. Turn it off and both go back to your tester name at once.</p>
+
+  <h3>Achievements</h3>
+  <p>A studio can set achievements that Betacade awards when your saves (with sharing On) pass a mark it chose, such as reaching level 5. We keep which you earned, when, on which build and with how much play time, and the game's studio sees them under your tester name. If an award fails our checks (for example, very little play time), it is held for the studio to approve or take back.</p>
+
+  <h3>Live stats pages</h3>
+  <p>A studio, or Betacade for an event it runs, can make a live page for a link to a game, for example to show on a screen at an event. Anyone with that page's address can see it while it runs: counts of play from that link, the game's own state replayed from sessions that came through it, and a scoreboard under tester names, never your name, email or account. When a link may have a live page, the play page says so before the game starts, and you can play without sending data.</p>
 
   <h3>Games on other sites</h3>
   <p>A studio can also publish its game elsewhere (such as itch.io) with Betacade's library in it. There, a small note tells you the game sends anonymous play data to its developer through Betacade, with a Don't share button. Unless you choose Don't share, or your browser sends Global Privacy Control or Do Not Track, the game sends the play data described above (sessions, errors with console lines, and the saves the studio names), along with the name of the site it's running on. You can sign in to Betacade from such a game: you approve it on Betacade's own page, and from then on your play there belongs to your account.</p>
@@ -142,23 +154,31 @@ Notes for matt (not published):
   <h3>Feedback and messages</h3>
   <p>When you send feedback or a message, we store it and pass it to the studio under your tester name. With sharing On, a note also carries the build and how far into the session you were. With sharing Off, it carries only the build. The note joins a thread between you and that studio so it can reply. Messages are not scanned or edited. If you type your own email or name into one, the studio will see it.</p>
 
+  <h3>From Discord</h3>
+  <p>On the Betacade Discord server, a message in a game's channel can be sent to that game's studio with &ldquo;Send to Betacade.&rdquo; We store the message's text, links to its attachments and a link to the message on Discord, and pass them to the studio as a note. If you send your own message and your Discord account is linked to a Betacade account that has played the game, the note joins your thread under your tester name, so the studio can reply. Otherwise, including when someone else sends your message, it arrives with no name, and the studio can't reply. Anyone who opens the Discord link sees the message as Discord shows it, with its author.</p>
+
   <h3>Stored in your browser</h3>
-  <p>To recognize you when you come back, the play page keeps a random player key in your browser's storage, along with your sharing choice, the games you've played in that browser, which save you were on, and which replies you've read. The key is not your name or email. It is sent to us with your play data and notes so they are kept together. Signing out clears these from that browser.</p>
+  <p>To recognize you when you come back, the play page keeps a random player key in your browser's storage, along with your sharing choice, the games you've played in that browser, the studio link or campaign you arrived from (for 12 hours), which save you were on, and which replies you've read. The key is not your name or email. It is sent to us with your play data and notes so they are kept together. Signing out clears these from that browser.</p>
 
   <h3>Request information</h3>
   <p>Like any website, our servers and providers receive your IP address, browser user agent and request times whenever your browser loads a page, a game file or sends data. We use these to deliver the page and the game, to apply rate limits, and for security. We do not use your IP address to find your location or build a profile of you, and studios do not receive it.</p>
 
   <h2 id="accounts">4. Accounts and sign-in</h2>
-  <p><strong>Players</strong> don't need an account. If you sign in, we ask only for your email address and send it a 6-digit code. If you sign in with Discord instead, we receive your Discord account id, username, picture and email address from Discord. You can add a name and picture of your own to your account; they're shown only where you choose (Section 5). Signing in links the games you've played in that browser to your account, keeps your saves across devices, collects your games on <a href="{{ site.play_url }}">Your games</a>, and lets us email you when a studio replies. A sign-in cookie keeps you signed in on that site. It is used for nothing else.</p>
+  <p><strong>Players</strong> don't need an account. If you sign in, we ask only for your email address and send it a 6-digit code. If you sign in with Discord instead, we receive your Discord account id, username, picture and email address from Discord. If you also connect Betacade from Discord's Linked Roles menu, you allow us to tell Discord whether you have a Betacade account and own a game there, when you joined, and your Betacade name, so the Betacade Discord server can give you its roles. We keep Discord's tokens for that, encrypted, and keep Discord up to date as those facts change. A suspended account's roles are taken away. Disconnecting Discord, or closing your account, clears the roles and ends our access at Discord. You can add a name and picture of your own to your account; they're shown only where you choose (Section 5). Signing in links the games you've played in that browser to your account, keeps your saves across devices, collects your games on <a href="{{ site.play_url }}">Your games</a>, and lets us email you when a studio replies. A sign-in cookie keeps you signed in on that site. It is used for nothing else.</p>
   <p><strong>Studios</strong> sign in the same way. When a studio asks us for something, such as saves and replays or a new feature, we keep what it tells us (what it's making, a link, and how and where to reach it). A studio's account holds its games, builds, settings and any access tokens it creates, including tokens an AI coding agent uses on its behalf. A studio name is shown to players on the play page (&ldquo;Space Frogs by Pond Studio&rdquo;).</p>
+  <p><strong>People in a studio.</strong> A studio can invite people to work on its games by email address. We email that address a link, and keep the address, the role the studio gave it and when it was invited and accepted. The studio's owner sees each invited address and role, and, once someone joins, their Betacade name. People who join see the studio's games, testers (under their tester names, and the studio's private names for them), replays and feedback; some can also deploy and reply. The studio sees which of its people deployed each build and sent each reply. Players never see who is in a studio: replies come from the studio. Someone who leaves or is removed also leaves the studio's groups.</p>
+  <p><strong>Private builds.</strong> A studio can make a build that only certain groups of people can play. It adds people to a group by email address, or by picking a tester who has signed in. We keep the group's name, the addresses and testers in it, and when each was added, and everyone in the studio can see them. We don't email the people added; they get in by signing in on the play page with that address.</p>
+  {% comment %} Publish this paragraph only with the OAuth release (API 0.105.0, docs/plans/next-mcp-oauth.md slice 1). {% endcomment %}
+  <p><strong>Connected apps.</strong> You can connect an app, such as an AI coding agent, to your account through Betacade's own sign-in page, which shows what the app is and what it may do. The app then receives tokens that let it read, and if you allow it, change, what your account can reach in each studio you're in, within your role there. We keep the app's name and address, what you allowed, and when you connected it and it was last used; the tokens are stored only as hashes. You can revoke an app at any time under Connected apps on your studio account page, which ends all its tokens. What an app does with what it reads is up to whoever runs it, under their own terms.</p>
 
   <h2 id="studios-see">5. What studios see, and what they don't</h2>
-  <p>A studio sees the play data and notes for its own games only, and sees each tester under an anonymous tester name (for example &ldquo;Amber Fox&rdquo;), one per game. A studio can give a tester a private name of its own choosing to tell testers apart; that name is the studio's note and isn't shown to you or anyone else.</p>
+  <p>A studio here includes the people it has invited to work on its games (Section 4): what this section says a studio sees, they see too. A studio sees the play data and notes for its own games only, and sees each tester under an anonymous tester name (for example &ldquo;Amber Fox&rdquo;), one per game. A studio can give a tester a private name of its own choosing to tell testers apart; that name is the studio's note and isn't shown to you or anyone else.</p>
   <ul>
     <li><strong>Studios never see your email address</strong>, whether or not you've signed in, and no part of Betacade gives it to them.</li>
     <li><strong>Your name and picture</strong> reach a studio only if you choose: &ldquo;Show my name&rdquo; for that game on Your games, or &ldquo;Show my name on the leaderboard&rdquo;. Turning it off takes them away again at once.</li>
     <li>Studios never see your IP address or your Betacade account.</li>
     <li>When a studio replies to you, Betacade carries the message. If you've signed in, we email you that there is a reply; the studio does not learn the address it went to. You can turn those emails off, or block a studio's messages, for each game.</li>
+    <li>If a studio adds your email address to a group for a private build, it already knows that address; we don't tell it whether the address has an account. But if only that group can play a build, the studio may be able to tell which tester you are from play on it.</li>
     <li>On a game's <strong>Your data</strong> tab, signed-in players can see what that studio sees: the sessions, saved state and errors your plays sent.</li>
   </ul>
   <p>A studio may export or copy what it sees, for example through the API. Once a studio has copied it, it is in the studio's hands as well as ours; your tester name, not your email, is what goes with it.</p>
@@ -194,7 +214,8 @@ Notes for matt (not published):
       </tbody>
     </table>
   </div>
-  <p>Besides the studio whose game you play (Section 5) and these providers, we disclose personal information only if the law requires it, to protect the safety or rights of people or of Betacade, or as part of a merger, acquisition or sale of the business, in which case this policy would continue to apply to what was collected under it.</p>
+  <p>At your direction, we also disclose to <strong>Discord</strong> the role facts in Section 4 if you connect Betacade from its Linked Roles menu, and give <strong>an app you connect</strong> what your account can reach (Section 4). Discord and those apps handle it under their own policies, not as our service providers.</p>
+  <p>Besides the studio whose game you play (Section 5), these providers, and Discord and apps you connect, we disclose personal information only if the law requires it, to protect the safety or rights of people or of Betacade, or as part of a merger, acquisition or sale of the business, in which case this policy would continue to apply to what was collected under it.</p>
 
   <h2 id="controls">9. Your controls</h2>
   <ul>
@@ -202,6 +223,8 @@ Notes for matt (not published):
     <li><strong>Global Privacy Control.</strong> If your browser sends a Global Privacy Control signal, the play page starts with sharing Off. It stays Off until you turn it On yourself.</li>
     <li><strong>Delete my play data.</strong> On each game's Your data tab: every session, error, save and message you have for that game, deleted. It can't be undone.</li>
     <li><strong>Messages.</strong> For each game, turn off reply emails, or block the studio's messages.</li>
+    <li><strong>Discord.</strong> Disconnect Discord from your account to clear your Betacade roles there, or remove Betacade from Discord's Authorized Apps.</li>
+    <li><strong>Studios and connected apps.</strong> Leave a studio you were invited to from People in the studio, and revoke a connected app under Connected apps on your studio account page.</li>
     <li><strong>Signing out.</strong> Signing out clears your player key and game list from that browser, so the next person to use it starts as a new tester and can't see your games. What you've already sent stays with your account until you delete it.</li>
     <li><strong>Your browser's storage.</strong> Clearing site data for the play page has a similar effect in that browser, but it does not delete anything we already hold. Use Delete my play data for that, or ask us (Section 12).</li>
   </ul>
@@ -215,6 +238,9 @@ Notes for matt (not published):
   <ul>
     <li><strong>Play data</strong> (sessions, saves, errors and replay recordings) is kept while the studio's game is on Betacade, so the studio can see it and your saves keep working. You can delete yours for any game at any time from Your data.</li>
     <li><strong>Feedback and messages</strong> are kept with the thread they belong to, on the same terms.</li>
+    <li><strong>Studio invitations and groups</strong> are kept until the studio removes them or you leave; an unused invitation link stops working after 14 days.</li>
+    <li><strong>Discord's tokens</strong> are kept until you disconnect Discord, close your account, or Discord stops accepting them.</li>
+    <li><strong>Connected apps:</strong> an app's access lasts an hour at a time and its renewal ends after 90 days unused or when you revoke it; the record of the connection (the app's name, what you allowed, and dates) stays with your account.</li>
     <li><strong>Accounts</strong> are kept until you ask us to close yours (see <a href="/data-request.html">Data requests</a>).</li>
     <li><strong>Request information</strong> in server logs is kept only briefly, for running and securing the service.</li>
     <li><strong>Backups</strong> are overwritten on a rolling schedule, so deleted data can take a short while to leave them.</li>
@@ -229,7 +255,7 @@ Notes for matt (not published):
     <table>
       <thead><tr><th>Category</th><th>What it is here</th><th>Collected?</th></tr></thead>
       <tbody>
-        <tr><td>Identifiers</td><td>Email address, for players and studios who sign in; your Discord account id and username, if you sign in with Discord; IP address; the random player key; your anonymous tester name; the name and picture you set, if you do</td><td>Yes</td></tr>
+        <tr><td>Identifiers</td><td>Email address, for players and studios who sign in; your Discord account id and username, if you sign in with Discord; IP address; the random player key; your anonymous tester name; the name and picture you set, if you do; email addresses a studio invites to work with it or adds to its groups</td><td>Yes</td></tr>
         <tr><td>Internet or other electronic network activity</td><td>Gameplay data: sessions, play time, saved state, errors and console lines, replay recordings, in-game events; device and browser details; feedback and messages</td><td>Yes</td></tr>
         <tr><td>Commercial information</td><td>Your paid plan and its history, if you subscribe (the payment itself is Stripe's)</td><td>Subscribers only</td></tr>
         <tr><td>Professional information</td><td>A studio's name, and what it tells us when it asks for a feature</td><td>Studios only</td></tr>
@@ -239,7 +265,7 @@ Notes for matt (not published):
       </tbody>
     </table>
   </div>
-  <p><strong>Sources:</strong> you (what you type and choose), your browser and the game you're playing (the play page), and for studios, the studio itself and its tools. <strong>Purposes:</strong> those in <a href="#use">Section 7</a>. <strong>Disclosed to:</strong> the game's studio (play data and notes, under your tester name) and our service providers (<a href="#processors">Section 8</a>). <strong>Retention:</strong> <a href="#retention">Section 11</a>.</p>
+  <p><strong>Sources:</strong> you (what you type and choose), your browser and the game you're playing (the play page), Discord (if you sign in with it), and for studios, the studio itself and its tools; your email address, if a studio invites you or adds you to a group. <strong>Purposes:</strong> those in <a href="#use">Section 7</a>. <strong>Disclosed to:</strong> the game's studio (play data and notes, under your tester name), our service providers (<a href="#processors">Section 8</a>), and, at your direction, Discord and apps you connect. <strong>Retention:</strong> <a href="#retention">Section 11</a>.</p>
 
   <h3>Your rights</h3>
   <ul>
@@ -265,7 +291,7 @@ Notes for matt (not published):
   <p>This website, betacade.com, sets no cookies and stores nothing in your browser. Its scripts copy the agent prompt when you ask, and count visits with PostHog: which pages are viewed, where visitors came from, and clicks on Publish a game and Play a game (with no email or anything you type). PostHog receives your IP address and browser details to do that, as our service provider; it doesn't track you across other sites, and it isn't loaded at all if your browser sends Global Privacy Control or Do Not Track. The play page, the games and the studio never use PostHog: what you do there reaches only the game's studio, as described above. It is a set of static pages hosted on GitHub Pages; GitHub receives your IP address when your browser fetches a page, as any web host does, and handles it under its own privacy statement. The play page, the player pages and the studio are separate sites (play.betacade.com and api.betacade.com), described in the sections above.</p>
 
   <h2 id="security">14. Security</h2>
-  <p>Every connection is encrypted with HTTPS. Each game runs on its own web origin, inside a sandboxed frame, so a game can't read the play page, your sign-in, or another game's data. Sign-in uses one-time email codes, so there is no password for us to store or for you to reuse. No system is perfectly secure; if we learn of a breach that affects you, we will tell you as the law requires.</p>
+  <p>Every connection is encrypted with HTTPS. Each game runs on its own web origin, inside a sandboxed frame, so a game can't read the play page, your sign-in, or another game's data. Sign-in uses one-time email codes, so there is no password for us to store or for you to reuse. Access tokens, including those of apps you connect, are stored only as hashes; Discord's tokens, which we have to be able to use, are stored encrypted. No system is perfectly secure; if we learn of a breach that affects you, we will tell you as the law requires.</p>
 
   <h2 id="children">15. Children</h2>
   <p>Betacade is not directed to children under 13, and we do not knowingly collect personal information from them. If you believe a child under 13 has given us personal information, email <a href="mailto:privacy@betacade.com">privacy@betacade.com</a> and we will delete it.</p>
