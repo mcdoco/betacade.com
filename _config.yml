@@ -18,6 +18,7 @@ repository: mcdoco/betacade.com
 # The app's hosts. Every call to action on the site points at one of these.
 studio_url: https://studio.betacade.com
 llms_url: https://api.betacade.com/llms.txt
+docs_url: https://api.betacade.com/docs
 play_url: https://play.betacade.com/
 # The Betacade Discord: help, and the community around the games.
 discord_url: https://discord.gg/DNmPcNxm6S
@@ -26,6 +27,10 @@ game_url: https://play.betacade.com/g/business
 # PostHog for betacade.com only (see _includes/analytics.html). Empty: no analytics at all.
 posthog_key: "phc_Cwhnm84Y3UAYC6VeZAc4v7G6P2ubEDQVEwKueUYdvzrR"
 posthog_host: https://us.i.posthog.com
+
+# Jekyll skips dot-folders unless named: the MCP Registry checks /.well-known/mcp-registry-auth.
+include:
+  - .well-known
 
 # Files that must not be published.
 exclude:
