@@ -1,0 +1,14 @@
+# The home page's FAQ: the visible list and its FAQPage structured data both read this, so they
+# can't disagree. Answers say only what ships.
+- q: Which engines work?
+  a: Unity (WebGL export), Godot 4 (web export) and plain HTML and JavaScript, so anything that exports to the web. Unreal and native mobile games can be playtested a slice at a time.
+- q: Do players need an account?
+  a: No. They play from a link in the browser. Signing in, with email or Discord, keeps their saves and name across devices.
+- q: Can I keep a build private?
+  a: Yes, on Pro. A build can be for chosen people only, while your game's link keeps playing the latest public build.
+- q: What do you record?
+  a: Only what a player agrees to share. Play time, how far they got from the game's own saves, errors, feedback and, where on, replays. Studios see a nickname, never the player's email, and players can see and delete their data.
+- q: What happens after December 31?
+  a: Studios on Founding Pro keep $15 a month for as long as they stay subscribed. New Pro subscriptions are $29 a month.
+- q: How is this different from itch.io or Steam Playtest?
+  a: itch.io hosts and sells games. Betacade shows you how people played yours, and works on itch.io too, through betacade.js. Steam Playtest is for desktop games on Steam. Betacade is for web builds anyone can play from a link.

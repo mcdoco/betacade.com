@@ -450,3 +450,10 @@ th { background: var(--soft); font-weight: 600; }
   .hero-grid > .mock, .step > .mock { box-shadow: 0 0 0 10px var(--soft), 0 12px 40px rgba(17, 17, 19, .08); margin: 10px 0; }
   .step > .devices { background: var(--soft); border-radius: 6px; box-shadow: 0 0 0 10px var(--soft); margin: 10px 0; }
 }
+
+/* ── FAQ ── */
+.faq .wrap { max-width: 44rem; }
+.faq h2 { text-align: center; margin-bottom: 20px; }
+.faq details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.faq summary { cursor: pointer; font-weight: 600; list-style-position: outside; }
+.faq details p { color: var(--text2); margin: 10px 0 0; }
