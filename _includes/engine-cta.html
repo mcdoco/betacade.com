@@ -1,0 +1,17 @@
+<section class="closing">
+  <div class="wrap">
+    <h2>Start free today</h2>
+    <div class="cta-row center">
+      <a class="btn lg" href="{{ site.studio_url }}" data-studio>Publish a game</a>
+      <a class="btn lg ghost" href="{{ site.docs_url | default: 'https://api.betacade.com/docs' }}/uploading-a-build">Read the upload guide</a>
+    </div>
+    <p class="aside">Other engines:
+      {%- assign engines = "unity-webgl:Unity WebGL,godot-web:Godot web,html5:HTML5" | split: "," -%}
+      {%- assign sep = "" -%}
+      {%- for e in engines -%}
+        {%- assign kv = e | split: ":" -%}
+        {%- assign href = "/" | append: kv[0] | append: ".html" -%}
+        {%- unless page.url == href %}{{ sep }} <a class="quiet" href="{{ href }}">{{ kv[1] }}</a>{% assign sep = " ·" %}{% endunless -%}
+      {%- endfor %}</p>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+---
+layout: default
+title: "Playtest a Unity WebGL game · Betacade"
+description: "Upload a Unity WebGL build, share one link, and see who played, how far they got, what broke and what they told you. Brotli and gzip builds work as exported."
+---
+<main class="engine-page">
+  <section class="engine-head">
+    <div class="wrap">
+      <h1>Playtest your Unity WebGL game</h1>
+      <p class="lede">Upload the WebGL build, send players one link, and see how they played it.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <h2>Export</h2>
+      <ul>
+        <li>File › Build Settings (Build Profiles in Unity 6) › WebGL, then Build. Zip the folder with index.html in it.</li>
+        <li>Brotli, gzip or no compression all work: compressed files are served with the right headers, so Decompression Fallback isn't needed.</li>
+        <li>Builds up to 100 MB unpacked.</li>
+      </ul>
+      <h2>Saves</h2>
+      <p>Unity's PlayerPrefs and persistentDataPath save to IndexedDB in a web build, which Betacade doesn't read yet. Copy your save into localStorage where the game saves, and Betacade shows how far each player got:</p>
+      <pre><code>// Assets/Plugins/WebGL/BetacadeSave.jslib
+mergeInto(LibraryManager.library, {
+  BetacadeSave: function (key, json) {
+    try { localStorage.setItem(UTF8ToString(key), UTF8ToString(json)); } catch (e) {}
+  },
+});</code></pre>
+      <p>Without it you still get sessions, play time, errors and feedback. The <a href="{{ site.docs_url | default: 'https://api.betacade.com/docs' }}/game-state">game state guide</a> has the C# side.</p>
+      {% include engine-shows.html %}
+    </div>
+  </section>
+  {% include engine-cta.html %}
+</main>

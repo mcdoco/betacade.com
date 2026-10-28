@@ -1,0 +1,27 @@
+---
+layout: default
+title: "Playtest an HTML5 game · Betacade"
+description: "Upload an HTML5 or JavaScript game (Phaser, three.js, Babylon.js, PlayCanvas, Defold, GameMaker), share one link, and see who played, how far they got and what broke."
+---
+<main class="engine-page">
+  <section class="engine-head">
+    <div class="wrap">
+      <h1>Playtest your HTML5 game</h1>
+      <p class="lede">Plain HTML and JavaScript, or anything that exports to the web: Phaser, three.js, Babylon.js, PlayCanvas, Defold, GameMaker and the like.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <h2>Upload</h2>
+      <ul>
+        <li>Zip the folder with index.html in it, and upload it in the studio, or have your coding agent deploy it.</li>
+        <li>Builds up to 100 MB unpacked. Everything in a build is public: never put keys or passwords in it.</li>
+      </ul>
+      <h2>Saves</h2>
+      <p>Keep the game's state in localStorage, as JSON under readable keys, and save often. Betacade reads it with no platform code in the game, so you see how far each player got:</p>
+      <pre><code>localStorage.setItem("save", JSON.stringify({ level: 3, deaths: 12 }));</code></pre>
+      {% include engine-shows.html %}
+    </div>
+  </section>
+  {% include engine-cta.html %}
+</main>

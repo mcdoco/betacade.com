@@ -1,0 +1,30 @@
+---
+layout: default
+title: "Playtest a Godot web game · Betacade"
+description: "Upload a Godot 4 web export, share one link, and see who played, how far they got, what broke and what they told you. Single- and multi-threaded exports both work."
+---
+<main class="engine-page">
+  <section class="engine-head">
+    <div class="wrap">
+      <h1>Playtest your Godot web game</h1>
+      <p class="lede">Upload the Godot 4 web export, send players one link, and see how they played it.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <h2>Export</h2>
+      <ul>
+        <li>Project › Export › Web, from a GDScript project. Godot 4 can't export C# to the web yet.</li>
+        <li>Single-threaded (the default) and multi-threaded exports both work: Godot builds are served cross-origin isolated.</li>
+        <li>Zip the folder with index.html in it. Builds up to 100 MB unpacked.</li>
+      </ul>
+      <h2>Saves</h2>
+      <p>Godot saves to user://, which is IndexedDB in a web build and not read by Betacade yet. Copy your progress into localStorage at each checkpoint, and Betacade shows how far each player got:</p>
+      <pre><code>if OS.has_feature("web"):
+    JavaScriptBridge.eval("localStorage.setItem('save', %s)" % JSON.stringify(JSON.stringify(progress)))</code></pre>
+      <p>Without it you still get sessions, play time, errors and feedback. More in the <a href="{{ site.docs_url | default: 'https://api.betacade.com/docs' }}/game-state">game state guide</a>.</p>
+      {% include engine-shows.html %}
+    </div>
+  </section>
+  {% include engine-cta.html %}
+</main>
