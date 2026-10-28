@@ -470,3 +470,18 @@ th { background: var(--soft); font-weight: 600; }
 .engine-page ul { margin: 0 0 8px 1.2em; }
 .engine-page li { margin-bottom: 6px; }
 .engine-page pre { background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font-size: 13px; }
+
+/* ── Home: a real screenshot beside a list of features ── */
+.players .lede.small { font-size: 15px; margin-top: 0; }
+.facts .badge { display: block; margin-bottom: 8px; }
+.feature { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 40px; align-items: start; max-width: 58rem; margin: 0 auto; }
+.feature figure { margin: 0; }
+.feature img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); }
+.feature figcaption { color: var(--text2); font-size: 13px; margin-top: 8px; text-align: center; }
+.feature-text { display: grid; gap: 22px; }
+.feature-text h3 { font-size: 1.05rem; margin-bottom: 6px; }
+.feature-text p { color: var(--text2); font-size: 15px; }
+@media (max-width: 760px) {
+  .feature { grid-template-columns: 1fr; gap: 28px; }
+  .feature figure { max-width: 260px; justify-self: center; }
+}

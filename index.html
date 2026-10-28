@@ -73,23 +73,45 @@ MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy h
 
   <section class="players">
     <div class="wrap">
-      <h2>Meet your players where they are</h2>
-      <p class="lede">Run your playtests and the community around your game together, without moving anyone off Discord.</p>
+      <h2>Your coding agent can deploy and read playtests</h2>
+      <p class="lede">Claude Code, Cursor or Codex can do the whole loop.</p>
       <div class="facts">
         <div>
-          <h3>Sign in with Discord.</h3>
-          <p>Players and studios can sign in with Discord, or link it to the account they already have.</p>
+          <h3>One prompt.</h3>
+          <p>Give your agent the prompt above. It signs in once with a code you approve, uploads the build and hands back the link. Files that haven't changed aren't uploaded again.</p>
         </div>
         <div>
-          <h3>Your Discord, on your game.</h3>
-          <p>Add your server's invite and players see "Join the Pond Studio Discord" on the welcome and in the pause menu. Give the Discord its own tracked link to see how many players came from it.</p>
+          <h3>An MCP server.</h3>
+          <p>Connect Claude Code, Cursor or VS Code to <code>api.betacade.com/mcp</code>. Your agent deploys builds, makes small edits to one, asks who played, reads a tester's sessions and errors, and moves bugs along.</p>
         </div>
         <div>
-          <h3>Notes from Discord.</h3>
-          <p>If your game's channel is on the Betacade Discord, right-click a message there, pick Apps, then Send to Betacade, and it lands in your game's inbox. Roles there show who plays (Playtester) and who makes games (Studio).</p>
+          <h3>Deploy on push.</h3>
+          <p>A GitHub Actions workflow can deploy every push to main, with a key of its own that you can revoke from the studio.</p>
         </div>
       </div>
-      <p class="lede"><a href="{{ site.discord_url }}" rel="noopener">Join the Betacade Discord</a></p>
+      <p class="lede small"><a href="{{ site.llms_url }}">llms.txt</a> covers the rest, and every answer from the API says what to do next. Every route is versioned and in the OpenAPI spec, and the <a href="{{ site.studio_url }}/changelog">changelog</a> says how to migrate when something breaks.</p>
+    </div>
+  </section>
+
+  <section class="players">
+    <div class="wrap">
+      <h2>Share it anywhere</h2>
+      <p class="lede">Post the link where your players already are, and see which places work.</p>
+      <div class="facts">
+        <div>
+          <h3>A badge for your README.</h3>
+          <p><img class="badge" src="/assets/img/play-on-betacade.svg" width="137" height="20" alt="Play on Betacade"></p>
+          <p>Every game has one. It opens the game, so anyone reading the repo is one click from playing it.</p>
+        </div>
+        <div>
+          <h3>itch.io and your own site.</h3>
+          <p>Ship betacade.js with the build and the copy on itch.io sends play time, errors and the saves you name to the same game here. Players there see a small note and can say no.</p>
+        </div>
+        <div>
+          <h3>Tracked links.</h3>
+          <p>Make a link for each place you post: Discord, a newsletter, a jam, itch.io. See how many players and sessions came from each one.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -116,20 +138,34 @@ MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy h
 
   <section class="players">
     <div class="wrap">
-      <h2>Show it off</h2>
-      <p class="lede">For when your game is ready for a crowd.</p>
-      <div class="facts">
-        <div>
-          <h3>Leaderboards and achievements.</h3>
-          <p>A leaderboard of the scores your game sends, with names only for players who opt in. Achievements are rules over the saves that Betacade checks, so players can't award themselves.</p>
-        </div>
-        <div>
-          <h3>Live pages.</h3>
-          <p>Put a page on a big screen at an event: a QR code to play, a running scoreboard, and replays of the best runs.</p>
-        </div>
-        <div>
-          <h3>Jams.</h3>
-          <p>Make a jam page and share its code. Games join, players play and vote for their top 3, and the results show when voting closes.</p>
+      <h2>Games are social</h2>
+      <p class="lede">Give players something to chase, compare and share.</p>
+      <div class="feature">
+        <figure>
+          <img src="/assets/img/remix-welcome.webp" width="600" height="1361" loading="lazy" alt="The welcome card on The Last Leaf's play page, on a phone: the cover, a short description, a Remix on GitHub link, and the choice to play and help the developer or play without sending data.">
+          <figcaption>The Last Leaf's play page, on a phone.</figcaption>
+        </figure>
+        <div class="feature-text">
+          <div>
+            <h3>Remix on GitHub.</h3>
+            <p>Link your game's public repo and say players may remix it. Its play page then shows Remix on GitHub, so a player who likes it can make their own version.</p>
+          </div>
+          <div>
+            <h3>Leaderboards.</h3>
+            <p>Every game has a top-score board. Your game sends a score when a run ends and shows the board wherever you like. Players appear under a made-up name unless they sign in and choose to show their own.</p>
+          </div>
+          <div>
+            <h3>Achievements.</h3>
+            <p>An achievement is a rule over the game's saves, and Betacade decides who earned it, so players can't award themselves one. Your game can show each player's trophy room.</p>
+          </div>
+          <div>
+            <h3>Jams.</h3>
+            <p>Make a jam page and share its code. Games join, players play and vote for their top 3, and the results show when voting closes.</p>
+          </div>
+          <div>
+            <h3>Live pages.</h3>
+            <p>Put a page on a big screen at an event: a QR code to play, a running scoreboard, and replays of the best runs.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -137,22 +173,23 @@ MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy h
 
   <section class="players">
     <div class="wrap">
-      <h2>Built for your agent</h2>
-      <p class="lede">Claude Code, Cursor or Codex can do the whole loop.</p>
+      <h2>Meet your players where they are</h2>
+      <p class="lede">Run your playtests and the community around your game together, without moving anyone off Discord.</p>
       <div class="facts">
         <div>
-          <h3>One prompt.</h3>
-          <p>Give your agent the prompt above. It signs in once with a code you approve, uploads the build and hands back the link. Files that haven't changed aren't uploaded again.</p>
+          <h3>Sign in with Discord.</h3>
+          <p>Players and studios can sign in with Discord, or link it to the account they already have.</p>
         </div>
         <div>
-          <h3>One guide.</h3>
-          <p><a href="{{ site.llms_url }}">llms.txt</a> covers deploying, setting up the page, reading who played and what they said, and filing bugs. Every answer from the API tells the agent what to do next.</p>
+          <h3>Your Discord, on your game.</h3>
+          <p>Add your server's invite and players see "Join the Pond Studio Discord" on the welcome and in the pause menu. Give the Discord its own tracked link to see how many players came from it.</p>
         </div>
         <div>
-          <h3>A versioned API.</h3>
-          <p>Every route is versioned and in the OpenAPI spec. The <a href="{{ site.studio_url }}/changelog">changelog</a> marks anything that breaks and says how to migrate.</p>
+          <h3>Notes from Discord.</h3>
+          <p>If your game's channel is on the Betacade Discord, right-click a message there, pick Apps, then Send to Betacade, and it lands in your game's inbox. Roles there show who plays (Playtester) and who makes games (Studio).</p>
         </div>
       </div>
+      <p class="lede"><a href="{{ site.discord_url }}" rel="noopener">Join the Betacade Discord</a></p>
     </div>
   </section>
 
@@ -170,10 +207,11 @@ MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy h
           <p>Studios see your progress under a made-up name, like Amber Fox, never your name or email. You choose whether a game sends anything at all, and you can turn it off any time.</p>
         </div>
         <div>
-          <h3>Your data, your call.</h3>
-          <p>See what a studio sees about you, and delete your play data for any game whenever you like.</p>
+          <h3>Your name, if you want it.</h3>
+          <p>Signed in, you can turn on "Show my name on the leaderboard" in the pause menu. Then your name and picture show beside your scores. Turn it off and you're back to your made-up name.</p>
         </div>
       </div>
+      <p class="lede small">See what a studio sees about you, and delete your play data for any game whenever you like.</p>
     </div>
   </section>
 
@@ -200,6 +238,7 @@ MAKE NO MISTAKES.</code><button type="button" class="btn ghost copy" data-copy h
     <div class="wrap">
       <h2>It's free to play and free to publish</h2>
       <p class="aside"><a class="quiet" href="/pricing.html">See pricing</a> · <a class="quiet" href="{{ site.discord_url }}" rel="noopener">Join the Discord</a></p>
+      <p class="aside">Guides for <a class="quiet" href="/unity-webgl.html">Unity WebGL</a>, <a class="quiet" href="/godot-web.html">Godot web</a> and <a class="quiet" href="/html5.html">HTML5</a> games.</p>
       <div class="cta-row center">
         <a class="btn lg" href="{{ site.studio_url }}" data-studio>Publish a game</a>
         <a class="btn lg ghost" href="{{ site.game_url }}">Play a game</a>

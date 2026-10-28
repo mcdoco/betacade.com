@@ -12,3 +12,7 @@
   a: Studios on Founding Pro keep $15 a month for as long as they stay subscribed. New Pro subscriptions are $29 a month.
 - q: How is this different from itch.io or Steam Playtest?
   a: itch.io hosts and sells games. Betacade shows you how people played yours, and works on itch.io too, through betacade.js. Steam Playtest is for desktop games on Steam. Betacade is for web builds anyone can play from a link.
+- q: Can my coding agent use it?
+  a: Yes. Betacade is an MCP server at https://api.betacade.com/mcp for Claude Code, Cursor and VS Code, and https://api.betacade.com/llms.txt walks any agent through the HTTP API. An agent can deploy builds, read who played and what they said, and file bugs.
+- q: Can players compete or remix my game?
+  a: Every game has a leaderboard your game can send scores to, and you can define achievements that Betacade checks against the saves. If your game has a public GitHub repo and you allow it, the play page shows Remix on GitHub.
