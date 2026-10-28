@@ -1,0 +1,62 @@
+---
+layout: default
+permalink: /jam/4h-sf/submit
+theme: dark
+title: "Submit your game · 4H Game Jam · Betacade"
+description: "Get your 4H Game Jam game onto the Betacade jam page: a new game, join with WK58KM, deploy before 8:30pm."
+jam_url: https://play.betacade.com/jam/4h-game-jam-chroma-awards-sf
+---
+<main class="sub">
+  <div class="sub-in">
+    <header class="sub-head">
+      <div>
+        <p class="jam-eyebrow">4H Game Jam · Chroma Awards SF · build 5:20 to 8:30pm</p>
+        <h1 class="sub-title">Get your game on the jam page</h1>
+      </div>
+      <div class="sub-code">
+        <p class="jam-code-label">Join code</p>
+        <p class="sub-code-v">WK58KM</p>
+      </div>
+    </header>
+
+    <div class="sub-paths">
+      <section class="sub-card">
+        <h2>With your AI agent</h2>
+        <p class="sub-lede">Paste this into Claude Code, Cursor or similar, from your game's folder.</p>
+        <div class="prompt"><code>Put my game in this folder on Betacade for the 4H Game Jam. Follow https://api.betacade.com/llms.txt and join the jam with code WK58KM.</code><button type="button" class="btn ghost copy" data-copy hidden>Copy</button></div>
+        <p class="sub-note">It will ask you to approve a sign-in link (and an email code).</p>
+      </section>
+
+      <section class="sub-card">
+        <h2>By hand</h2>
+        <ol class="sub-steps">
+          <li><span>1</span><div>Sign in at <a href="{{ site.studio_url }}">studio.betacade.com</a></div></li>
+          <li><span>2</span><div>Create a <b>new</b> game</div></li>
+          <li><span>3</span><div>Open <a href="{{ site.studio_url }}/jams">Jams</a> in the top bar and enter <b class="mono">WK58KM</b></div></li>
+          <li><span>4</span><div>Upload your build. Once it's ready, it's on the jam page.</div></li>
+        </ol>
+      </section>
+    </div>
+
+    <div class="sub-foot">
+      <section class="sub-know" aria-label="Good to know">
+        <h2>Good to know</h2>
+        <ul>
+          <li><b>New game only.</b> One made before the jam started can't join.</li>
+          <li><b>Deploy by 8:30pm.</b> Entries lock when voting opens.</li>
+          <li><b>Voting:</b> signed-in players pick their top 3 of the games they played.</li>
+          <li><b>Saves go in localStorage</b> (browser storage), as the guide asks.</li>
+        </ul>
+      </section>
+
+      <aside class="sub-qr">
+        <a class="jam-qr" href="{{ page.jam_url }}" aria-label="Open the jam page">
+          <img src="/assets/img/jam/qr-4h-sf.svg" alt="QR code for the jam page" width="330" height="330" />
+        </a>
+        <p class="jam-url">play.betacade.com/jam/4h-game-jam-chroma-awards-sf</p>
+      </aside>
+    </div>
+
+    <p class="sub-by">Playtests by <a href="/">Betacade</a>: you see who played your game and how far they got.</p>
+  </div>
+</main>

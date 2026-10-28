@@ -567,3 +567,54 @@ th { background: var(--soft); font-weight: 600; }
   .jam-thanks { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .jam-logos { justify-content: center; --logo-h: 22px; }
 }
+
+/* ── Jam submit one-pager (jam/4h-sf-submit.html): readable on a phone, one printed page ── */
+.jam-submit { margin-top: 12px; }
+.sub-in { max-width: 1120px; margin: 0 auto; padding: clamp(24px, 4vh, 48px) var(--gutter) 40px; display: grid; gap: 24px; }
+.sub-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; }
+.sub-title { font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+.sub-code { text-align: right; }
+.sub-code .jam-code-label { margin-top: 0; font-size: 12px; }
+.sub-code-v, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .06em; }
+.sub-code-v { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; }
+.sub-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sub-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 12px; align-content: start; }
+.sub-card h2, .sub-know h2 { font-size: 20px; font-weight: 700; }
+.sub-lede, .sub-note { color: var(--text2); font-size: 15px; }
+.sub-card .prompt { padding: 16px 76px 16px 34px; font-size: 15px; line-height: 1.5; }
+.sub-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; font-size: 16px; }
+.sub-steps li { display: flex; gap: 12px; align-items: baseline; }
+.sub-steps span { display: inline-grid; place-items: center; width: 1.6em; height: 1.6em; border-radius: 50%; flex: none;
+  background: var(--pbg); color: var(--pfg); font-size: .85em; font-weight: 700; transform: translateY(-.05em); }
+.sub-foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px 32px; align-items: center; }
+.sub-know { padding: 0; }
+.sub-know ul { margin: 10px 0 0; padding-left: 1.1em; display: grid; gap: 6px; color: var(--text2); font-size: 15px; }
+.sub-know b { color: var(--text); }
+.sub-qr { display: grid; justify-items: center; text-align: center; }
+.sub-qr .jam-qr { width: 170px; padding: 12px; border-radius: 14px; }
+.sub-qr .jam-url { font-size: 12px; max-width: 220px; }
+.sub-by { color: var(--text2); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+.sub-by a { color: var(--text); }
+@media (max-width: 760px) {
+  .sub-paths, .sub-foot { grid-template-columns: 1fr; }
+  .sub-code { text-align: left; }
+  .sub-card { padding: 18px; }
+}
+@media print {
+  @page { size: auto; margin: 12mm; }
+  :root[data-theme="dark"] { color-scheme: light; --bg: #fff; --card: #fff; --line: #bbb; --soft: #f2f2f2; --border: #999;
+    --text: #000; --text2: #222; --faint: #888; --pbg: #000; --pfg: #fff; --accent: #000; }
+  body:has(.sub) { background: #fff; color: #000; }
+  body:has(.sub) .top, body:has(.sub) .site-foot, .sub .copy { display: none !important; }
+  .sub a { color: #000; }
+  .sub-in { padding: 0; gap: 14px; max-width: none; }
+  .sub-title { font-size: 26pt; }
+  .sub-code-v { font-size: 26pt; }
+  .sub-paths { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sub-card { padding: 12px 14px; gap: 8px; break-inside: avoid; }
+  .sub-card .prompt { padding: 10px 12px 10px 36px; font-size: 10.5pt; }
+  .sub-steps, .sub-know ul { font-size: 11pt; }
+  .sub-foot { grid-template-columns: minmax(0, 1fr) auto; }
+  .sub-qr .jam-qr { width: 150px; padding: 0; }
+  .sub-steps span, .jam-qr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
