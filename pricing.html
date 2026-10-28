@@ -5,6 +5,14 @@ description: "Betacade is free to play and free to publish. Founding Supporter (
 ---
 
 <main class="pricing-page">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Betacade", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web",
+   "url": "{{ '/' | absolute_url }}", "offers": [
+     {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"},
+     {"@type": "Offer", "name": "Founding Supporter", "price": "3", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "3", "priceCurrency": "USD", "unitCode": "MON"}},
+     {"@type": "Offer", "name": "Founding Pro", "price": "15", "priceCurrency": "USD", "priceValidUntil": "2026-12-31", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "15", "priceCurrency": "USD", "unitCode": "MON"}}
+   ]}
+  </script>
   <section class="pricing-head">
     <div class="wrap">
       <h1>Free to play, free to publish</h1>
